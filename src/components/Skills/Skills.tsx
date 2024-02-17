@@ -4,9 +4,10 @@ import "./Skills.css";
 function Skills() {
   const [newSkill, setNewSkill] = useState("");
   const [skills, setSkills] = useState([
-    "Teamwork",
-    "Communicative",
-    "Responsible",
+    "Trabajo en equipo",
+    "Comunicativo",
+    "Responsable",
+    "Organizado",
   ]);
 
   const onRemoveSkill = (skillToRemove: string) => {
@@ -31,7 +32,7 @@ function Skills() {
   return (
     <>
       <div className="editable">
-        <h2>Skills</h2>
+        <h2>Habilidades</h2>
         <ul className="skills">
           {skills.map((skill) => (
             <li key={skill}>
@@ -59,7 +60,7 @@ function Skills() {
             />
           </li>
           <li onClick={onAddSkill} className="add">
-            add
+            agregar habilidad
           </li>
         </ul>
       </div>
