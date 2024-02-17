@@ -5,8 +5,32 @@
 }
 
 .skills > li {
-  background-color: #e0e2e8;
+  background-color: #f0f2f8;
+  border: 2px solid #c0c2c8;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
   margin-right: 1rem;
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  position: relative;
+}
+
+.skills > li.add {
+  background-color: #ebfaf6;
+  border: 2px solid #abbab6;
   padding: 0.5rem 1rem;
+}
+
+.skills > li > svg {
+  color: #888;
+  cursor: pointer;
+  margin-left: 1rem;
+  position: absolute;
+  top: 50%;
+  right: 0.3rem;
+  transform: translateY(-50%);
+}
+
+.skills > li > svg:hover {
+  color: black;
 }

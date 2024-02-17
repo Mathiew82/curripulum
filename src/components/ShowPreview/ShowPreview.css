@@ -1,0 +1,29 @@
+.show-preview-button {
+  background-color: #ebfaf6;
+  border: 2px solid #abbab6;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 0 #abbab6;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0.5rem 1.5rem 0.8rem 1.5rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: padding 0.1s;
+}
+
+.show-preview-button > svg {
+  margin-right: 0.5rem;
+}
+
+.show-preview-button:hover {
+  background-color: #dbeae6;
+  border-color: #8b9a96;
+  box-shadow: 0 4px 0 #8b9a96;
+  padding: 1rem 1.5rem;
+}

@@ -10,7 +10,7 @@
 }
 
 body {
-  margin: 0;
+  margin: 1.5rem 0 0 0;
 }
 
 ul {
@@ -37,20 +37,19 @@ h2 {
 }
 
 .editable {
-  border: 2px dashed #c0c2c8;
+  background-color: #fffaf4;
+  border: 2px dashed #cfcac4;
+  border-radius: 12px;
   margin-top: 2rem;
   padding: 1rem;
   position: relative;
-}
-
-.editable:first-child {
-  margin-top: 0;
 }
 
 .edit-button {
   background-color: #f0f2f8;
   border: 2px solid #c0c2c8;
   border-radius: 8px;
+  box-shadow: 0 3px 0 #c0c2c8;
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
@@ -60,7 +59,12 @@ h2 {
   right: 1rem;
 }
 
+.edit-button > svg {
+  margin-right: 0.3rem;
+}
+
 .edit-button:hover {
   background-color: #e0e2e8;
-  border: 2px solid #707278;
+  border-color: #707278;
+  box-shadow: 0 3px 0 #707278;
 }
