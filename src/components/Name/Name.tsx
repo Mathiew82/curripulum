@@ -5,11 +5,11 @@ function Name() {
   const [name, setName] = useState("Pepe Pérez García");
   const [editingName, setEditingName] = useState(false);
 
-  const handleToggleEditName = () => {
+  const onToggleEditName = () => {
     setEditingName(!editingName);
   };
 
-  const handleChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = (event.target as HTMLInputElement).value;
     setName(value);
   };
@@ -26,7 +26,7 @@ function Name() {
       {!editingName ? (
         <h1 className="editable">
           <span className="display-name">{name}</span>
-          <span onClick={handleToggleEditName} className="edit-button">
+          <span onClick={onToggleEditName} className="edit-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -45,12 +45,8 @@ function Name() {
         </h1>
       ) : (
         <div className="editable">
-          <input
-            className="input-name"
-            onChange={handleChangeName}
-            value={name}
-          />
-          <span onClick={handleToggleEditName} className="edit-button">
+          <input className="input-name" onChange={onChangeName} value={name} />
+          <span onClick={onToggleEditName} className="edit-button">
             save
           </span>
         </div>
