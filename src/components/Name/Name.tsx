@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./Name.css";
 
 function Name() {
   const [name, setName] = useState("Pepe Pérez García");

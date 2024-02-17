@@ -36,10 +36,3 @@ h1 {
   background-color: #e0e2e8;
   border: 2px solid #707278;
 }
-
-.input-name {
-  border: none;
-  font-size: 32px;
-  font-weight: bold;
-  padding: 1rem;
-}
