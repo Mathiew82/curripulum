@@ -1,6 +1,7 @@
 import Name from "./components/Name/Name";
 import Skills from "./components/Skills/Skills";
 import ShowPreview from "./components/ShowPreview/ShowPreview";
+import Experience from "./components/Experience/Experience";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <ShowPreview />
       <Name />
       <Skills />
+      <Experience />
     </>
   );
 }

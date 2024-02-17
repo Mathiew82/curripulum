@@ -1,0 +1,19 @@
+.experience {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 1rem;
+  padding-bottom: 2rem;
+}
+
+.experience:last-child {
+  border: none;
+}
+
+.experience > .position {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.experience > .date {
+  color: #555;
+  margin-bottom: 0.8rem;
+}

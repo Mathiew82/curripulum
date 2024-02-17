@@ -20,7 +20,8 @@ ul {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   width: 100%;
   display: block;
   padding: 1rem 0;
@@ -33,7 +34,12 @@ h1 {
 
 h2 {
   font-size: 22px;
-  margin-top: 1rem;
+}
+
+h3 {
+  color: #487;
+  font-size: 20px;
+  padding: 0.5rem 0;
 }
 
 .editable {
