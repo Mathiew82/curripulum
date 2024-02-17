@@ -1,24 +1,47 @@
 .skills {
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
 }
 
 .skills > li {
+  height: 40px;
   background-color: #f0f2f8;
   border: 2px solid #c0c2c8;
   border-radius: 8px;
   display: flex;
   align-items: center;
   margin-right: 1rem;
-  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  margin-bottom: 1rem;
+  padding: 0 2.5rem 0 1rem;
   position: relative;
+}
+
+.skills > li.input {
+  background-color: #c0c2c8;
+  border-color: transparent;
+  padding: 0;
+}
+
+.skills > li.input > input {
+  border: none;
+  border-radius: 6px;
+  height: 36px;
+  padding: 0 1rem;
 }
 
 .skills > li.add {
   background-color: #ebfaf6;
   border: 2px solid #abbab6;
-  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0 1rem;
+}
+
+.skills > li.add:hover {
+  background-color: #ebfaf6;
+  background-color: #dbeae6;
 }
 
 .skills > li > svg {
