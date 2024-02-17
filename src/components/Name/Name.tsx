@@ -9,7 +9,7 @@ function Name() {
     setEditingName(!editingName);
   };
 
-  const handleChangename = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = (event.target as HTMLInputElement).value;
     setName(value);
   };
@@ -34,7 +34,7 @@ function Name() {
         <div className="editable">
           <input
             className="input-name"
-            onChange={handleChangename}
+            onChange={handleChangeName}
             value={name}
           />
           <span onClick={handleToggleEditName} className="edit-button">

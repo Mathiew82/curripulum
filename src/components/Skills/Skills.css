@@ -1,0 +1,12 @@
+.skills {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.skills > li {
+  background-color: #e0e2e8;
+  border-radius: 8px;
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+}

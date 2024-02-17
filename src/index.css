@@ -6,30 +6,58 @@
 
 #root {
   width: 100%;
+  padding: 1rem;
 }
 
-h1 {
-  width: 100%;
-  display: block;
-  font-size: 32px;
-  padding: 1rem;
+body {
   margin: 0;
 }
 
+ul {
+  list-style: none inside;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2 {
+  width: 100%;
+  display: block;
+  padding: 1rem 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 22px;
+  margin-top: 1rem;
+}
+
 .editable {
+  border: 2px dashed #c0c2c8;
+  margin-top: 2rem;
+  padding: 1rem;
   position: relative;
+}
+
+.editable:first-child {
+  margin-top: 0;
 }
 
 .edit-button {
   background-color: #f0f2f8;
   border: 2px solid #c0c2c8;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
   padding: 0.5rem 1rem;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 1rem;
+  right: 1rem;
 }
 
 .edit-button:hover {
