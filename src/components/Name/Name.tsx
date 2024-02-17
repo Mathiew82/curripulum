@@ -27,7 +27,7 @@ function Name() {
         <h1 className="editable">
           <span className="display-name">{name}</span>
           <span onClick={handleToggleEditName} className="edit-button">
-            editar
+            edit
           </span>
         </h1>
       ) : (
@@ -38,7 +38,7 @@ function Name() {
             value={name}
           />
           <span onClick={handleToggleEditName} className="edit-button">
-            guardar
+            save
           </span>
         </div>
       )}

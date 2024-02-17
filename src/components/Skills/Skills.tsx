@@ -32,14 +32,14 @@ function Skills() {
               ))}
             </ul>
             <span onClick={handleToggleEditSkills} className="edit-button">
-              editar
+              edit
             </span>
           </>
         ) : (
           <>
             <div>aslkjdlkj</div>
             <span onClick={handleToggleEditSkills} className="edit-button">
-              guardar
+              save
             </span>
           </>
         )}
