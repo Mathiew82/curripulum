@@ -4,7 +4,7 @@
   padding-bottom: 2rem;
 }
 
-.experience:last-child {
+.experience:last-of-type {
   border: none;
 }
 
