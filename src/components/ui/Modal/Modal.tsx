@@ -6,15 +6,17 @@ interface Props {
   title: string;
 }
 
-function Modal(props: Props) {
+function Modal({ children, active, title }: Props) {
   return (
     <>
-      <div className="wrapper-modal">
-        <div className="modal">
-          <h2>{props.title}</h2>
-          {props.children}
+      {active && (
+        <div className="wrapper-modal">
+          <div className="modal">
+            <h2>{title}</h2>
+            {children}
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }
