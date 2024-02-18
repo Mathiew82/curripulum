@@ -9,9 +9,11 @@ interface Props {
 function Modal(props: Props) {
   return (
     <>
-      <div className="modal">
-        <h2>{props.title}</h2>
-        {props.children}
+      <div className="wrapper-modal">
+        <div className="modal">
+          <h2>{props.title}</h2>
+          {props.children}
+        </div>
       </div>
     </>
   );
