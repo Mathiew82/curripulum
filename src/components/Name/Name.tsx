@@ -5,11 +5,11 @@ function Name() {
   const [name, setName] = useState("Pepe Pérez García");
   const [editingName, setEditingName] = useState(false);
 
-  const onToggleEditName = () => {
+  const onToggleEditName = (): void => {
     setEditingName(!editingName);
   };
 
-  const onChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeName = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const value = (event.target as HTMLInputElement).value;
     setName(value);
   };

@@ -1,9 +1,9 @@
-.create-experience > .field {
+.create-experience .field {
   display: flex;
   margin-bottom: 1.5rem;
 }
 
-.create-experience > .field:first-child {
+.create-experience .field:first-child {
   margin-top: 2rem;
 }
 
@@ -24,13 +24,15 @@
 
 .create-experience input {
   height: 40px;
+  padding: 0 1rem;
 }
 
 .create-experience textarea {
   height: 200px;
+  padding: 1rem;
 }
 
-.create-experience > .wrapper-buttons {
+.create-experience .wrapper-buttons {
   display: flex;
   justify-content: space-between;
   margin-top: 3rem;
