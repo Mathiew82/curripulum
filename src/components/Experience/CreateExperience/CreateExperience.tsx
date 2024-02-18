@@ -1,7 +1,12 @@
 import Modal from "../../ui/Modal/Modal.tsx";
 import "./CreateExperience.css";
 
-function CreateExperience() {
+interface Props {
+  active: boolean;
+  closeModal: Function;
+}
+
+function CreateExperience({ active, closeModal }: Props) {
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -10,11 +15,13 @@ function CreateExperience() {
 
     const formJson = Object.fromEntries(formData.entries());
     console.log(formJson);
+
+    closeModal(false);
   };
 
   return (
     <>
-      <Modal active={true} title="Crear nueva experiencia">
+      <Modal active={active} title="Crear nueva experiencia">
         <div className="create-experience">
           <form onSubmit={onSubmit}>
             <div className="field">
