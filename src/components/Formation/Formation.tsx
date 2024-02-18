@@ -2,7 +2,7 @@ function Formation() {
   return (
     <>
       <div className="editable">
-        <h2>Formation</h2>
+        <h2>Formación</h2>
       </div>
     </>
   );

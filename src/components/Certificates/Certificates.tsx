@@ -2,7 +2,7 @@ function Certificates() {
   return (
     <>
       <div className="editable">
-        <h2>Certificates</h2>
+        <h2>Certificados</h2>
       </div>
     </>
   );
