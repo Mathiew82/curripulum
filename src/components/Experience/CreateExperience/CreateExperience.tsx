@@ -16,8 +16,13 @@ function CreateExperience({ active, closeModal, addExperience }: Props) {
     const formData = new FormData(form as HTMLFormElement);
 
     const formJson = Object.fromEntries(formData.entries());
+    const newObject: Record<string, string> = {};
 
-    addExperience(formJson as unknown as Experience);
+    for (const key in formJson) {
+      newObject[key] = (formJson[key] as string).trim();
+    }
+
+    addExperience(newObject as Experience);
     closeModal(false);
   };
 
