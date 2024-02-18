@@ -1,0 +1,65 @@
+.create-experience > .field {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.create-experience > .field:first-child {
+  margin-top: 2rem;
+}
+
+.create-experience label {
+  min-width: 200px;
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 1rem;
+  padding-top: 0.6rem;
+}
+
+.create-experience input,
+.create-experience textarea {
+  border: 2px solid #c0c2c8;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.create-experience input {
+  height: 40px;
+}
+
+.create-experience textarea {
+  height: 200px;
+}
+
+.create-experience > .wrapper-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.create-experience button {
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+}
+
+.create-experience button.cancel {
+  background-color: #f0f2f8;
+  border: 2px solid #c0c2c8;
+}
+
+.create-experience button.cancel:hover {
+  background-color: #e0e2e8;
+  border-color: #707278;
+}
+
+.create-experience button.save {
+  background-color: #ebfaf6;
+  border: 2px solid #abbab6;
+}
+
+.create-experience button.save:hover {
+  background-color: #dbeae6;
+  border-color: #7b8a86;
+}
