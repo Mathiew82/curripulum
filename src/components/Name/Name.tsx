@@ -26,12 +26,12 @@ function Name() {
       {!editingName ? (
         <h1 className="editable">
           <span className="display-name">{name}</span>
-          <span onClick={onToggleEditName} className="edit-button">
+          <button onClick={onToggleEditName} className="edit-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
-              viewBox="0 0 24 24"
+              viewBox="0 0 24 18"
               stroke="currentColor"
               fill="none"
             >
@@ -40,14 +40,14 @@ function Name() {
               <path d="M13.5 6.5l4 4" />
             </svg>
             editar
-          </span>
+          </button>
         </h1>
       ) : (
         <div className="editable">
           <input className="input-name" onChange={onChangeName} value={name} />
-          <span onClick={onToggleEditName} className="edit-button">
+          <button onClick={onToggleEditName} className="edit-button">
             guardar
-          </span>
+          </button>
         </div>
       )}
     </>
