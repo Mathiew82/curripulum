@@ -3,6 +3,7 @@
   margin: 1rem 0;
   padding-bottom: 2rem;
   position: relative;
+  text-align: left;
 }
 
 .experience:last-of-type {
