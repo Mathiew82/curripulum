@@ -11,7 +11,7 @@ function Skills() {
   ]);
 
   const onRemoveSkill = (skillToRemove: string) => {
-    const newSkills = skills.filter((skill) => skill !== skillToRemove);
+    const newSkills = skills.filter((skill: string) => skill !== skillToRemove);
     setSkills(newSkills);
   };
 
