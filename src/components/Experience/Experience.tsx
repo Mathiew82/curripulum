@@ -2,31 +2,52 @@ import { useState } from "react";
 import CreateExperience from "../Experience/CreateExperience/CreateExperience.tsx";
 import "./Experience.css";
 
+type Experience = {
+  company: string;
+  position: string;
+  duration: string;
+  description: string;
+};
+
 function Experience() {
+  const [experiences, setExperiences] = useState<Experience[]>([
+    {
+      company: "Promofarma",
+      position: "Frontend engineer",
+      duration: "jun. 2021 - actualidad",
+      description:
+        "Tecnologías: CSS, SASS, JavaScript, Typescript, Vue.js, Vuex, GraphQL, Jest, GIT",
+    },
+    {
+      company: "Housfy",
+      position: "Front-End Developer",
+      duration: "dic. 2020 - abr. 2021",
+      description:
+        "Tecnologías: CSS, SASS, JavaScript, Vue.js, Nuxt.js, Vuex, Jest, GIT",
+    },
+  ]);
+
   const [showCreateExperienceModal, setShowCreateExperienceModal] =
     useState<boolean>(false);
+
+  const addExperience = (experience: Experience): void => {
+    const newExperiences = [...experiences];
+    newExperiences.push(experience);
+    setExperiences(newExperiences);
+  };
 
   return (
     <>
       <div className="editable">
         <h2>Experiencia</h2>
-        <article className="experience">
-          <h3>Promofarma</h3>
-          <div className="position">Frontend engineer</div>
-          <div className="date">jun. 2021 - actualidad</div>
-          <div className="description">
-            Tecnologías: CSS, SASS, JavaScript, Typescript, Vue.js, Vuex,
-            GraphQL, Jest, GIT
-          </div>
-        </article>
-        <article className="experience">
-          <h3>Housfy</h3>
-          <div className="position">Front-End Developer</div>
-          <div className="date">dic. 2020 - abr. 2021</div>
-          <div className="description">
-            Tecnologías: CSS, SASS, JavaScript, Vue.js, Nuxt.js, Vuex, Jest, GIT
-          </div>
-        </article>
+        {experiences.map(({ company, position, duration, description }) => (
+          <article key={company} className="experience">
+            <h3>{company}</h3>
+            <div className="position">{position}</div>
+            <div className="duration">{duration}</div>
+            <div className="description">{description}</div>
+          </article>
+        ))}
 
         <button
           onClick={() => setShowCreateExperienceModal(true)}
@@ -50,6 +71,7 @@ function Experience() {
       <CreateExperience
         active={showCreateExperienceModal}
         closeModal={setShowCreateExperienceModal}
+        addExperience={addExperience}
       />
     </>
   );

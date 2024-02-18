@@ -1,12 +1,14 @@
 import Modal from "../../ui/Modal/Modal.tsx";
+import Experience from "../Experience.tsx";
 import "./CreateExperience.css";
 
 interface Props {
   active: boolean;
   closeModal: Function;
+  addExperience: Function;
 }
 
-function CreateExperience({ active, closeModal }: Props) {
+function CreateExperience({ active, closeModal, addExperience }: Props) {
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -14,8 +16,8 @@ function CreateExperience({ active, closeModal }: Props) {
     const formData = new FormData(form as HTMLFormElement);
 
     const formJson = Object.fromEntries(formData.entries());
-    console.log(formJson);
 
+    addExperience(formJson as unknown as Experience);
     closeModal(false);
   };
 
