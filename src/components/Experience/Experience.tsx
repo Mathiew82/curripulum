@@ -12,20 +12,20 @@ type Experience = {
 function Experience() {
   const [experiences, setExperiences] = useState<Experience[]>([
     {
-      company: "Promofarma",
-      position: "Frontend engineer",
+      company: "Empresa",
+      position: "Posición",
       duration: "jun. 2021 - actualidad",
       description:
-        "Tecnologías: CSS, SASS, JavaScript, Typescript, Vue.js, Vuex, GraphQL, Jest, GIT",
-    },
-    {
-      company: "Housfy",
-      position: "Front-End Developer",
-      duration: "dic. 2020 - abr. 2021",
-      description:
-        "Tecnologías: CSS, SASS, JavaScript, Vue.js, Nuxt.js, Vuex, Jest, GIT",
+        "Aquí la descripción de las tareas y responsabilidades de este puesto de trabajo",
     },
   ]);
+
+  const onRemoveExperience = (experienceToRemove: Experience) => {
+    const newExperiences = experiences.filter(
+      (experience: Experience) => experience !== experienceToRemove,
+    );
+    setExperiences(newExperiences);
+  };
 
   const [showCreateExperienceModal, setShowCreateExperienceModal] =
     useState<boolean>(false);
@@ -40,13 +40,26 @@ function Experience() {
     <>
       <div className="editable">
         <h2>Experiencia</h2>
-        {experiences.map(({ company, position, duration, description }) => (
-          <article key={company} className="experience">
-            <h3>{company}</h3>
-            <div className="position">{position}</div>
-            <div className="duration">{duration}</div>
-            <div className="description">{description}</div>
-          </article>
+        {experiences.map((experience: Experience) => (
+          <div className="experience" key={experience.company}>
+            <h3>{experience.company}</h3>
+            <div className="position">{experience.position}</div>
+            <div className="duration">{experience.duration}</div>
+            <div className="description">{experience.description}</div>
+            <svg
+              onClick={() => onRemoveExperience(experience)}
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              fill="none"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M18 6l-12 12" />
+              <path d="M6 6l12 12" />
+            </svg>
+          </div>
         ))}
 
         <button

@@ -1,7 +1,8 @@
 .experience {
   border-bottom: 1px solid #ccc;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
   padding-bottom: 2rem;
+  position: relative;
 }
 
 .experience:last-of-type {
@@ -16,4 +17,16 @@
 .experience > .duration {
   color: #555;
   margin-bottom: 0.8rem;
+}
+
+.experience > svg {
+  color: #888;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 0;
+}
+
+.experience > svg:hover {
+  color: black;
 }
