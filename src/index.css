@@ -4,15 +4,15 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-#root {
-  width: 100%;
+body {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0 4rem 0;
   padding: 1rem;
-  text-align: center;
 }
 
-body {
+#root {
   max-width: 1280px;
-  margin: 1.5rem auto 4rem auto;
 }
 
 ul {
@@ -27,7 +27,6 @@ h3 {
   width: 100%;
   display: block;
   margin: 0;
-  text-align: left;
 }
 
 h1 {

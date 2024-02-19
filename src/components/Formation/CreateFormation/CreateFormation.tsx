@@ -32,15 +32,15 @@ function CreateFormation({ active, closeModal, addFormation }: Props) {
         <div className="create-formation">
           <form onSubmit={onSubmit}>
             <div className="field">
-              <label>Empresa</label>
+              <label>Centro de formación</label>
               <input name="trainingCenter" />
             </div>
             <div className="field">
-              <label>Posición</label>
+              <label>Tema del curso</label>
               <input name="theme" />
             </div>
             <div className="field">
-              <label>Duración</label>
+              <label>Fecha del curso</label>
               <input name="date" />
             </div>
             <div className="field">
