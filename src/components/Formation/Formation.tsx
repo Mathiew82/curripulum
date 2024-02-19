@@ -3,18 +3,18 @@ import CreateFormation from "./CreateFormation/CreateFormation.tsx";
 import "./Formation.css";
 
 type Formation = {
-  company: string;
-  position: string;
-  duration: string;
+  trainingCenter: string;
+  theme: string;
+  date: string;
   description: string;
 };
 
 function Formation() {
   const [formations, setFormations] = useState<Formation[]>([
     {
-      company: "Empresa",
-      position: "Posición",
-      duration: "jun. 2021 - actualidad",
+      trainingCenter: "Empresa",
+      theme: "Posición",
+      date: "jun. 2021 - actualidad",
       description:
         "Aquí la descripción de las tareas y responsabilidades de este puesto de trabajo",
     },
@@ -41,10 +41,10 @@ function Formation() {
       <div className="editable">
         <h2>Formación</h2>
         {formations.map((formation: Formation) => (
-          <div className="formation" key={formation.company}>
-            <h3>{formation.company}</h3>
-            <div className="position">{formation.position}</div>
-            <div className="duration">{formation.duration}</div>
+          <div className="formation" key={formation.trainingCenter}>
+            <h3>{formation.trainingCenter}</h3>
+            <div className="theme">{formation.theme}</div>
+            <div className="date">{formation.date}</div>
             <div className="description">{formation.description}</div>
             <svg
               onClick={() => onRemoveFormation(formation)}
