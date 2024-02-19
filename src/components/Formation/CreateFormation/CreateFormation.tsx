@@ -9,10 +9,10 @@ interface Props {
 }
 
 function CreateFormation({ active, closeModal, addFormation }: Props) {
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-    const form = event.target;
+    const form = e.target;
     const formData = new FormData(form as HTMLFormElement);
 
     const formJson = Object.fromEntries(formData.entries());
@@ -23,6 +23,11 @@ function CreateFormation({ active, closeModal, addFormation }: Props) {
     }
 
     addFormation(newObject as Formation);
+    closeModal(false);
+  };
+
+  const onCancel = (e: React.MouseEvent<HTMLElement>): void => {
+    e.preventDefault();
     closeModal(false);
   };
 
@@ -48,7 +53,9 @@ function CreateFormation({ active, closeModal, addFormation }: Props) {
               <textarea name="description" />
             </div>
             <div className="wrapper-buttons">
-              <button className="cancel">Cancelar</button>
+              <button onClick={onCancel} className="cancel">
+                Cancelar
+              </button>
               <button className="save" type="submit">
                 Agregar
               </button>
