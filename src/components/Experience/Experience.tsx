@@ -16,7 +16,7 @@ function Experience() {
       position: "Posición",
       duration: "jun. 2021 - actualidad",
       description:
-        "Aquí la descripción de las tareas y responsabilidades de este puesto de trabajo",
+        "Aquí la descripción de las tareas y responsabilidades de este puesto de trabajo.",
     },
   ]);
 

@@ -12,11 +12,11 @@ type Formation = {
 function Formation() {
   const [formations, setFormations] = useState<Formation[]>([
     {
-      trainingCenter: "Empresa",
-      theme: "Posición",
-      date: "jun. 2021 - actualidad",
+      trainingCenter: "Centro de formación",
+      theme: "Desarrollo de páginas web",
+      date: "2019",
       description:
-        "Aquí la descripción de las tareas y responsabilidades de este puesto de trabajo",
+        "Aquí la descripción del curso sobre los temas que se enseñaron en el curso.",
     },
   ]);
 
