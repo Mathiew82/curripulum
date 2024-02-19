@@ -1,0 +1,33 @@
+.formation {
+  border-bottom: 1px solid #ccc;
+  margin: 1rem 0;
+  padding-bottom: 2rem;
+  position: relative;
+  text-align: left;
+}
+
+.formation:last-of-type {
+  border: none;
+}
+
+.formation > .position {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.formation > .duration {
+  color: #555;
+  margin-bottom: 0.8rem;
+}
+
+.formation > svg {
+  color: #888;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 0;
+}
+
+.formation > svg:hover {
+  color: black;
+}

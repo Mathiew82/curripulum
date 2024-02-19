@@ -1,14 +1,14 @@
 import Modal from "../../ui/Modal/Modal.tsx";
-import Experience from "../Experience.tsx";
-import "./CreateExperience.css";
+import Formation from "../Formation.tsx";
+import "./CreateFormation.css";
 
 interface Props {
   active: boolean;
   closeModal: Function;
-  addExperience: Function;
+  addFormation: Function;
 }
 
-function CreateExperience({ active, closeModal, addExperience }: Props) {
+function CreateFormation({ active, closeModal, addFormation }: Props) {
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -22,14 +22,14 @@ function CreateExperience({ active, closeModal, addExperience }: Props) {
       newObject[key] = (formJson[key] as string).trim();
     }
 
-    addExperience(newObject as Experience);
+    addFormation(newObject as Formation);
     closeModal(false);
   };
 
   return (
     <>
-      <Modal active={active} title="Agregar nueva experiencia">
-        <div className="create-experience">
+      <Modal active={active} title="Agregar nueva formación">
+        <div className="create-formation">
           <form onSubmit={onSubmit}>
             <div className="field">
               <label>Empresa</label>
@@ -60,4 +60,4 @@ function CreateExperience({ active, closeModal, addExperience }: Props) {
   );
 }
 
-export default CreateExperience;
+export default CreateFormation;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CreateExperience from "../Experience/CreateExperience/CreateExperience.tsx";
+import CreateExperience from "./CreateExperience/CreateExperience.tsx";
 import "./Experience.css";
 
 type Experience = {
