@@ -2,20 +2,19 @@ import { useState } from "react";
 import "./Skills.css";
 
 function Skills() {
-  const [newSkill, setNewSkill] = useState("");
-  const [skills, setSkills] = useState([
-    "Trabajo en equipo",
+  const [newSkill, setNewSkill] = useState<string>("");
+  const [skills, setSkills] = useState<string[]>([
     "Comunicativo",
     "Responsable",
     "Organizado",
   ]);
 
-  const onRemoveSkill = (skillToRemove: string) => {
+  const onRemoveSkill = (skillToRemove: string): void => {
     const newSkills = skills.filter((skill: string) => skill !== skillToRemove);
     setSkills(newSkills);
   };
 
-  const onAddSkill = () => {
+  const onAddSkill = (): void => {
     const newSkills = [...skills];
 
     newSkills.push(newSkill);
@@ -24,7 +23,7 @@ function Skills() {
     setNewSkill("");
   };
 
-  const onEditNewSkill = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onEditNewSkill = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const value = (event.target as HTMLInputElement).value;
     setNewSkill(value);
   };
@@ -62,6 +61,7 @@ function Skills() {
             <input
               className="input-new-skill"
               onChange={onEditNewSkill}
+              placeholder="Ejemplo: Trabajo en equipo"
               value={newSkill}
             />
           </li>
