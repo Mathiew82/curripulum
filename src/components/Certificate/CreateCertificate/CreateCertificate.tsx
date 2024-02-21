@@ -37,16 +37,12 @@ function CreateCertificate({ active, closeModal, addCertificate }: Props) {
         <div className="create-certificate">
           <form onSubmit={onSubmit}>
             <div className="field">
-              <label>Centro de formación</label>
-              <input name="trainingCenter" />
+              <label>Certificación obtenida por</label>
+              <input name="certificationCenter" />
             </div>
             <div className="field">
-              <label>Tema del curso</label>
+              <label>Certificación</label>
               <input name="theme" />
-            </div>
-            <div className="field">
-              <label>Fecha del curso</label>
-              <input name="date" />
             </div>
             <div className="field">
               <label>Descripción</label>

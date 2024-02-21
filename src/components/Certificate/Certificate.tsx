@@ -3,7 +3,7 @@ import CreateCertificate from "./CreateCertificate/CreateCertificate.tsx";
 import "./Certificate.css";
 
 type Certificate = {
-  trainingCenter: string;
+  certificationCenter: string;
   theme: string;
   description: string;
 };
@@ -11,7 +11,7 @@ type Certificate = {
 function Certificate() {
   const [certificates, setCertificates] = useState<Certificate[]>([
     {
-      trainingCenter: "Centro de formación",
+      certificationCenter: "Centro de formación",
       theme: "Desarrollo de páginas web",
       description:
         "Aquí la descripción del curso sobre los temas que se enseñaron en el curso.",
@@ -39,8 +39,8 @@ function Certificate() {
       <div className="editable">
         <h2>Certificados</h2>
         {certificates.map((certificate: Certificate) => (
-          <div className="certificates" key={certificate.trainingCenter}>
-            <h3>{certificate.trainingCenter}</h3>
+          <div className="certificates" key={certificate.certificationCenter}>
+            <h3>{certificate.certificationCenter}</h3>
             <div className="theme">{certificate.theme}</div>
             <div className="description">{certificate.description}</div>
             <svg
