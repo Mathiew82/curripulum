@@ -1,0 +1,27 @@
+.certificates {
+  border-bottom: 1px solid #ccc;
+  margin: 1rem 0;
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+.certificates:last-of-type {
+  border: none;
+}
+
+.certificates > .theme {
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+}
+
+.certificates > svg {
+  color: #888;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 0;
+}
+
+.certificates > svg:hover {
+  color: black;
+}

@@ -3,7 +3,7 @@ import Skills from "./components/Skills/Skills";
 import ShowPreview from "./components/ShowPreview/ShowPreview";
 import Experience from "./components/Experience/Experience";
 import Formation from "./components/Formation/Formation";
-import Certificates from "./components/Certificates/Certificates";
+import Certificate from "./components/Certificate/Certificate";
 import Languages from "./components/Languages/Languages";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
       <Skills />
       <Experience />
       <Formation />
-      <Certificates />
+      <Certificate />
       <Languages />
     </>
   );

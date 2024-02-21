@@ -1,0 +1,67 @@
+.create-certificate .field {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.create-certificate .field:first-child {
+  margin-top: 2rem;
+}
+
+.create-certificate label {
+  min-width: 200px;
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 1rem;
+  padding-top: 0.6rem;
+}
+
+.create-certificate input,
+.create-certificate textarea {
+  border: 2px solid #c0c2c8;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.create-certificate input {
+  height: 40px;
+  padding: 0 1rem;
+}
+
+.create-certificate textarea {
+  height: 200px;
+  padding: 1rem;
+}
+
+.create-certificate .wrapper-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.create-certificate button {
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+}
+
+.create-certificate button.cancel {
+  background-color: #f0f2f8;
+  border: 2px solid #c0c2c8;
+}
+
+.create-certificate button.cancel:hover {
+  background-color: #e0e2e8;
+  border-color: #707278;
+}
+
+.create-certificate button.save {
+  background-color: #ebfaf6;
+  border: 2px solid #abbab6;
+}
+
+.create-certificate button.save:hover {
+  background-color: #dbeae6;
+  border-color: #7b8a86;
+}
