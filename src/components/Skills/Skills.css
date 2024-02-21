@@ -32,16 +32,16 @@
 }
 
 .skills > li.add {
-  background-color: #ebfaf6;
-  border: 2px solid #abbab6;
+  background-color: #e2f1ed;
+  border: 2px solid #7b8a86;
   cursor: pointer;
   font-weight: bold;
   padding: 0 1rem;
 }
 
 .skills > li.add:hover {
-  background-color: #ebfaf6;
-  background-color: #dbeae6;
+  background-color: #d2e1dd;
+  border-color: #5b6a66;
 }
 
 .skills > li > svg {

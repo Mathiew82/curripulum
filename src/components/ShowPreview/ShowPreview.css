@@ -1,9 +1,9 @@
 .show-preview-button {
-  background-color: #ebfaf6;
-  border: 2px solid #abbab6;
+  background-color: #e2f1ed;
+  border: 2px solid #7b8a86;
   border-top: none;
   border-radius: 0 0 8px 8px;
-  box-shadow: 0 4px 0 #abbab6;
+  box-shadow: 0 4px 0 #7b8a86;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -22,8 +22,8 @@
 }
 
 .show-preview-button:hover {
-  background-color: #dbeae6;
-  border-color: #8b9a96;
-  box-shadow: 0 4px 0 #8b9a96;
+  background-color: #d2e1dd;
+  border-color: #5b6a66;
+  box-shadow: 0 4px 0 #5b6a66;
   padding: 1rem 1.5rem;
 }
