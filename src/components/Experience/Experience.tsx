@@ -20,15 +20,15 @@ function Experience() {
     },
   ]);
 
-  const onRemoveExperience = (experienceToRemove: Experience) => {
+  const [showCreateExperienceModal, setShowCreateExperienceModal] =
+    useState<boolean>(false);
+
+  const onRemoveExperience = (experienceToRemove: Experience): void => {
     const newExperiences = experiences.filter(
       (experience: Experience) => experience !== experienceToRemove,
     );
     setExperiences(newExperiences);
   };
-
-  const [showCreateExperienceModal, setShowCreateExperienceModal] =
-    useState<boolean>(false);
 
   const addExperience = (experience: Experience): void => {
     const newExperiences = [...experiences];

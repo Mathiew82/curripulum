@@ -20,15 +20,15 @@ function Formation() {
     },
   ]);
 
-  const onRemoveFormation = (formationToRemove: Formation) => {
+  const [showCreateFormationModal, setShowCreateFormationModal] =
+    useState<boolean>(false);
+
+  const onRemoveFormation = (formationToRemove: Formation): void => {
     const newFormations = formations.filter(
       (formation: Formation) => formation !== formationToRemove,
     );
     setFormations(newFormations);
   };
-
-  const [showCreateFormationModal, setShowCreateFormationModal] =
-    useState<boolean>(false);
 
   const addFormation = (formation: Formation): void => {
     const newFormations = [...formations];

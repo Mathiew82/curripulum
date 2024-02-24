@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./Name.css";
 
 function Name() {
-  const [name, setName] = useState("Pepe Pérez García");
-  const [editingName, setEditingName] = useState(false);
+  const [name, setName] = useState<string>("Pepe Pérez García");
+  const [editingName, setEditingName] = useState<boolean>(false);
 
   const onToggleEditName = (): void => {
     setEditingName(!editingName);

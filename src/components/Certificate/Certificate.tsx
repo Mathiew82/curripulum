@@ -18,15 +18,15 @@ function Certificate() {
     },
   ]);
 
-  const onRemoveCertificate = (certificateToRemove: Certificate) => {
+  const [showCreateCertificateModal, setShowCreateCertificateModal] =
+    useState<boolean>(false);
+
+  const onRemoveCertificate = (certificateToRemove: Certificate): void => {
     const newCertificates = certificates.filter(
       (certificate: Certificate) => certificate !== certificateToRemove,
     );
     setCertificates(newCertificates);
   };
-
-  const [showCreateCertificateModal, setShowCreateCertificateModal] =
-    useState<boolean>(false);
 
   const addCertificate = (certificate: Certificate): void => {
     const newCertificates = [...certificates];
