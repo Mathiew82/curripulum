@@ -13,15 +13,3 @@
   font-weight: bold;
   margin-bottom: 0.8rem;
 }
-
-.certificates > svg {
-  color: #888;
-  cursor: pointer;
-  position: absolute;
-  top: 1rem;
-  right: 0;
-}
-
-.certificates > svg:hover {
-  color: black;
-}

@@ -12,7 +12,7 @@ body {
 }
 
 #root {
-  max-width: 1280px;
+  width: 1200px;
 }
 
 ul {
@@ -52,6 +52,7 @@ h3 {
   margin-top: 2rem;
   padding: 1rem;
   position: relative;
+  transition: all 0.1s;
 }
 
 .edit-button {
@@ -62,18 +63,55 @@ h3 {
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
+  opacity: 1;
   padding: 0.5rem 1rem;
   position: absolute;
   top: 1rem;
   right: 1rem;
+  transition: opacity 0.1s;
 }
 
 .edit-button > svg {
-  margin-right: 0.3rem;
+  margin-right: 0.1rem;
 }
 
 .edit-button:hover {
   background-color: #e0e2e8;
   border-color: #707278;
-  box-shadow: 0 3px 0 #707278;
+  box-shadow: 0.1px 0 #707278;
+}
+
+.remove-button {
+  color: #888;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 0;
+}
+
+.remove-button:hover {
+  color: black;
+}
+
+.experience,
+.formation,
+.certificates {
+  transition: margin 0.1s;
+}
+
+body.preview .editable {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+body.preview .edit-button,
+body.preview .remove-button {
+  opacity: 0;
+}
+
+body.preview .experience,
+body.preview .formation,
+body.preview .certificates {
+  margin-top: 0;
 }

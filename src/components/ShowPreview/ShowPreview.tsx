@@ -1,9 +1,13 @@
 import "./ShowPreview.css";
 
 function ShowPreview() {
+  const onTogglePreview = () => {
+    document.body.classList.toggle("preview");
+  };
+
   return (
     <>
-      <button className="show-preview-button">
+      <button onClick={onTogglePreview} className="show-preview-button">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

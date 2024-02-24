@@ -18,15 +18,3 @@
   color: #555;
   margin-bottom: 0.8rem;
 }
-
-.experience > svg {
-  color: #888;
-  cursor: pointer;
-  position: absolute;
-  top: 1rem;
-  right: 0;
-}
-
-.experience > svg:hover {
-  color: black;
-}
