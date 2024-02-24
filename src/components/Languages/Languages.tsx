@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./Languages.css";
 
 function Languages() {
@@ -17,12 +17,20 @@ function Languages() {
   };
 
   const onAddLanguage = (): void => {
+    if (newLanguage === "") return;
+
     const newLanguages = [...languages];
-
     newLanguages.push(newLanguage);
-    setLanguages(newLanguages);
 
+    setLanguages(newLanguages);
     setNewLanguage("");
+  };
+
+  const onAddLanguageWithEnter = (
+    event: React.KeyboardEvent<HTMLInputElement>,
+  ): void => {
+    if (event.key !== "Enter" || newLanguage === "") return;
+    onAddLanguage();
   };
 
   const onEditNewLanguage = (
@@ -66,6 +74,7 @@ function Languages() {
             <input
               className="input-new-language"
               onChange={onEditNewLanguage}
+              onKeyUp={onAddLanguageWithEnter}
               placeholder="Ejemplo: Portugués (medio)"
               value={newLanguage}
             />

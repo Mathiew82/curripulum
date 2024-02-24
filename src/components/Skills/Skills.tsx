@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./Skills.css";
 
 function Skills() {
@@ -15,12 +15,20 @@ function Skills() {
   };
 
   const onAddSkill = (): void => {
+    if (newSkill === "") return;
+
     const newSkills = [...skills];
-
     newSkills.push(newSkill);
-    setSkills(newSkills);
 
+    setSkills(newSkills);
     setNewSkill("");
+  };
+
+  const onAddSkillWithEnter = (
+    event: React.KeyboardEvent<HTMLInputElement>,
+  ): void => {
+    if (event.key !== "Enter" || newSkill === "") return;
+    onAddSkill();
   };
 
   const onEditNewSkill = (event: React.ChangeEvent<HTMLInputElement>): void => {
@@ -62,6 +70,7 @@ function Skills() {
             <input
               className="input-new-skill"
               onChange={onEditNewSkill}
+              onKeyUp={onAddSkillWithEnter}
               placeholder="Ejemplo: Trabajo en equipo"
               value={newSkill}
             />
