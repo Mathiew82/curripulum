@@ -84,12 +84,30 @@ h3 {
 .remove-button {
   color: #888;
   cursor: pointer;
+  opacity: 1;
   position: absolute;
   top: 1rem;
   right: 0;
+  transition: opacity 0.1s;
 }
 
 .remove-button:hover {
+  color: black;
+}
+
+.remove-tag-button {
+  color: #888;
+  cursor: pointer;
+  margin-left: 1rem;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  right: 0.3rem;
+  transform: translateY(-50%);
+  transition: opacity 0.1s;
+}
+
+.remove-tag-button:hover {
   color: black;
 }
 
@@ -99,14 +117,26 @@ h3 {
   transition: margin 0.1s;
 }
 
+body.preview h1 {
+  margin-bottom: 3rem;
+}
+
 body.preview .editable {
   background-color: transparent;
   border: none;
   padding: 0;
 }
 
+body.preview .skills > li,
+body.preview .languages > li {
+  padding: 0 1rem;
+}
+
 body.preview .edit-button,
-body.preview .remove-button {
+body.preview .remove-button,
+body.preview .remove-tag-button,
+body.preview .input,
+body.preview .add {
   opacity: 0;
 }
 

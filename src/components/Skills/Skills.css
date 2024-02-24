@@ -16,6 +16,7 @@
   margin-bottom: 1rem;
   padding: 0 2.5rem 0 1rem;
   position: relative;
+  transition: all 0.1s;
 }
 
 .skills > li.input {
@@ -42,18 +43,4 @@
 .skills > li.add:hover {
   background-color: #d2e1dd;
   border-color: #5b6a66;
-}
-
-.skills > li > svg {
-  color: #888;
-  cursor: pointer;
-  margin-left: 1rem;
-  position: absolute;
-  top: 50%;
-  right: 0.3rem;
-  transform: translateY(-50%);
-}
-
-.skills > li > svg:hover {
-  color: black;
 }
