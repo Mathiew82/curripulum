@@ -1,24 +1,24 @@
-import { useState } from "react";
 import "./ShowPreview.css";
 
 function ShowPreview() {
-  const [textButton, setTextButton] = useState<string>("Mostrar previa");
-
-  const onTogglePreview = () => {
+  const onTogglePreview = (): void => {
     document.body.classList.toggle("preview");
+  };
 
-    if (document.body.classList.contains("preview")) {
-      setTextButton("Mostrar edición");
-    } else {
-      setTextButton("Mostrar previa");
-    }
+  document.body.onkeyup = (event: KeyboardEvent): void => {
+    if (event.key !== "Escape") return;
+    document.body.classList.remove("preview");
   };
 
   return (
     <>
       <button onClick={onTogglePreview} className="show-preview-button">
-        {textButton}
+        Modo imprimir
       </button>
+      <div className="info-text">
+        Presiona <strong>esc</strong> para volver a la edición desde el modo
+        imprimir
+      </div>
     </>
   );
 }
