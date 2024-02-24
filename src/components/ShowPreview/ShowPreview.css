@@ -27,3 +27,8 @@
   box-shadow: 0 4px 0 #5b6a66;
   padding: 1rem 1.5rem;
 }
+
+.info-text {
+  margin-top: 1.2rem;
+  text-align: center;
+}
