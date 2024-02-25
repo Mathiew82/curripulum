@@ -155,6 +155,7 @@ body.preview .languages > li {
 body.preview .edit-button,
 body.preview .remove-button,
 body.preview .remove-tag-button,
+body.preview .remove-module-button,
 body.preview .input,
 body.preview .add,
 body.preview .wrapper-add-certificates-module {
