@@ -89,6 +89,22 @@ h3 {
   color: black;
 }
 
+.remove-module-button {
+  background-color: #dfdad4;
+  border: 2px solid #8c8e93;
+  border-radius: 100%;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0.5rem 0.7rem;
+  position: absolute;
+  top: -1.2rem;
+  right: -1.2rem;
+}
+
+.remove-module-button:hover {
+  background-color: #cfcac4;
+}
+
 .remove-tag-button {
   color: #888;
   cursor: pointer;
@@ -140,7 +156,8 @@ body.preview .edit-button,
 body.preview .remove-button,
 body.preview .remove-tag-button,
 body.preview .input,
-body.preview .add {
+body.preview .add,
+body.preview .wrapper-add-certificates-module {
   display: none;
 }
 
