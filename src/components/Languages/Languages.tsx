@@ -5,7 +5,7 @@ function Languages() {
   const [newLanguage, setNewLanguage] = useState<string>("");
   const [languages, setLanguages] = useState<string[]>([
     "Español (nativo)",
-    "Catalán (nativo)",
+    "Italiano (medio)",
     "Inglés (bajo)",
   ]);
 
