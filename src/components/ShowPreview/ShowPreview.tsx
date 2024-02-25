@@ -17,11 +17,6 @@ function ShowPreview() {
     onToggleTextButton();
   };
 
-  document.body.onkeyup = (event: KeyboardEvent): void => {
-    if (event.key !== "Escape") return;
-    document.body.classList.remove("preview");
-  };
-
   return (
     <>
       <button onClick={onTogglePreview} className="show-preview-button">
