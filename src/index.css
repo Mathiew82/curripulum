@@ -109,8 +109,9 @@ h3 {
   transition: margin 0.1s;
 }
 
-body.preview .show-preview-button {
-  display: none;
+body.preview {
+  margin-top: 0;
+  padding-top: 0;
 }
 
 body.preview .info-text {
