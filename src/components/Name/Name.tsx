@@ -10,7 +10,7 @@ function Name() {
   };
 
   const onChangeName = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    const value = (event.target as HTMLInputElement).value.trim();
+    const value = (event.target as HTMLInputElement).value;
     setName(value);
   };
 
