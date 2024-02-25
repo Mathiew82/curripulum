@@ -3,6 +3,9 @@ import "./Name.css";
 
 function Name() {
   const [name, setName] = useState<string>("Pepe Pérez García");
+  const [photo, setPhoto] = useState<string | ArrayBuffer | null | undefined>(
+    null,
+  );
   const [editingName, setEditingName] = useState<boolean>(false);
 
   const onToggleEditName = (): void => {
@@ -25,6 +28,18 @@ function Name() {
     (document.querySelector(".save-name-button") as HTMLButtonElement).click();
   };
 
+  const onLoadFile = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const reader = new FileReader();
+
+    reader.onload = (e: ProgressEvent<FileReader>) => {
+      setPhoto(e.target?.result);
+    };
+
+    reader.readAsDataURL(
+      event.target.files ? event.target.files[0] : new Blob(),
+    );
+  };
+
   useEffect(() => {
     if (editingName) {
       const inputNameElement = document.querySelector(".input-name");
@@ -35,7 +50,11 @@ function Name() {
   return (
     <>
       {!editingName ? (
-        <h1 className="editable">
+        <h1 className="wrapper-name editable">
+          <img
+            src={`${photo || "/images/default-photo.jpg"}`}
+            className="photo"
+          />
           <span className="display-name">{name}</span>
           <button onClick={onToggleEditName} className="edit-button">
             <svg
@@ -54,7 +73,36 @@ function Name() {
           </button>
         </h1>
       ) : (
-        <div className="editable">
+        <div className="wrapper-name editable">
+          {photo ? (
+            <>
+              <img
+                src={`${photo || "/images/default-photo.jpg"}`}
+                className="photo"
+              />
+              <label className="image-label" htmlFor="image">
+                Cambiar foto
+                <input
+                  type="file"
+                  id="image"
+                  onChange={onLoadFile}
+                  name="image"
+                  accept="image/png, image/jpeg"
+                />
+              </label>
+            </>
+          ) : (
+            <label className="image-label" htmlFor="image">
+              Subir foto
+              <input
+                type="file"
+                id="image"
+                onChange={onLoadFile}
+                name="image"
+                accept="image/png, image/jpeg"
+              />
+            </label>
+          )}
           <input
             className="input-name"
             onChange={onChangeName}
