@@ -14,6 +14,17 @@ function Name() {
     setName(value);
   };
 
+  const onChangeNameWithEnter = (
+    event: React.KeyboardEvent<HTMLInputElement>,
+  ) => {
+    if (event.key !== "Enter" || name === "") return;
+
+    const value = (event.target as HTMLInputElement).value;
+    setName(value);
+
+    (document.querySelector(".save-name-button") as HTMLButtonElement).click();
+  };
+
   useEffect(() => {
     if (editingName) {
       const inputNameElement = document.querySelector(".input-name");
@@ -44,8 +55,16 @@ function Name() {
         </h1>
       ) : (
         <div className="editable">
-          <input className="input-name" onChange={onChangeName} value={name} />
-          <button onClick={onToggleEditName} className="edit-button">
+          <input
+            className="input-name"
+            onChange={onChangeName}
+            onKeyUp={onChangeNameWithEnter}
+            value={name}
+          />
+          <button
+            onClick={onToggleEditName}
+            className="save-name-button edit-button"
+          >
             guardar
           </button>
         </div>
