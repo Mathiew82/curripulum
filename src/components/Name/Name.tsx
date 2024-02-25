@@ -16,7 +16,7 @@ function Name() {
 
   const onChangeNameWithEnter = (
     event: React.KeyboardEvent<HTMLInputElement>,
-  ) => {
+  ): void => {
     if (event.key !== "Enter" || name === "") return;
 
     const value = (event.target as HTMLInputElement).value;
