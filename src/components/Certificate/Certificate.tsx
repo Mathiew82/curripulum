@@ -13,8 +13,7 @@ function Certificate() {
     {
       certificationCenter: "Centro de formación",
       theme: "Desarrollo de páginas web",
-      description:
-        "Aquí la descripción del curso sobre los temas que se enseñaron en el curso.",
+      description: "Aquí la descripción de la certificación obtenida.",
     },
   ]);
 
