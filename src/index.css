@@ -90,6 +90,8 @@ h3 {
 }
 
 .remove-module-button {
+  width: 36px;
+  height: 36px;
   background-color: #dfdad4;
   border: 2px solid #8c8e93;
   border-radius: 100%;
@@ -99,6 +101,25 @@ h3 {
   position: absolute;
   top: -1.2rem;
   right: -1.2rem;
+}
+
+.remove-module-button:after,
+.remove-module-button:before {
+  width: 2px;
+  height: 16px;
+  background-color: black;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.remove-module-button:after {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.remove-module-button:before {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .remove-module-button:hover {
