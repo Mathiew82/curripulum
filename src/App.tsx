@@ -7,6 +7,7 @@ import Experience from "./components/Experience/Experience";
 import Formation from "./components/Formation/Formation";
 import Certificate from "./components/Certificate/Certificate";
 import Languages from "./components/Languages/Languages";
+import Settings from "./components/Settings/Settings";
 
 interface ItemType {
   id: number;
@@ -34,6 +35,7 @@ function App() {
 
   return (
     <>
+      <Settings />
       <ShowPreview />
       <ReactSortable
         list={state}
