@@ -11,6 +11,28 @@ body {
   padding: 1rem;
 }
 
+body.d2 h3 {
+  font-size: 16px;
+}
+body.d2 .position,
+body.d2 .theme,
+body.d2 .duration,
+body.d2 .date,
+body.d2 .description {
+  font-size: 14px;
+}
+
+body.x2 h3 {
+  font-size: 20px;
+}
+body.x2 .position,
+body.x2 .theme,
+body.x2 .duration,
+body.x2 .date,
+body.x2 .description {
+  font-size: 18px;
+}
+
 #root {
   width: 1200px;
 }
@@ -30,18 +52,18 @@ h3 {
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 28px;
   padding: 1rem 0;
 }
 
 h2 {
-  font-size: 22px;
+  font-size: 20px;
   padding: 0 0 1rem 0;
 }
 
 h3 {
   color: #487;
-  font-size: 20px;
+  font-size: 18px;
   padding: 0.5rem 0;
 }
 
