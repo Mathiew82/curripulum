@@ -85,6 +85,11 @@ h3 {
   transition: all 0.1s;
 }
 
+.editable:hover {
+  border-color: #8f8a84;
+  cursor: ns-resize;
+}
+
 .edit-button {
   background-color: #ebedf3;
   border: 2px solid #8c8e93;
