@@ -15,6 +15,7 @@
   left: 50%;
   transform: translateX(-50%);
   transition: padding 0.1s;
+  z-index: 10;
 }
 
 .show-preview-button > svg {
