@@ -3,6 +3,7 @@
   height: auto;
   background-color: #ccced3;
   border-radius: 6px 0 0 6px;
+  cursor: default;
   display: flex;
   justify-content: flex-end;
   align-items: center;
