@@ -12,8 +12,8 @@ function Certificate() {
   const [activate, setActivate] = useState<boolean>(true);
   const [certificates, setCertificates] = useState<Certificate[]>([
     {
-      certificationCenter: "Centro de formación",
-      theme: "Desarrollo de páginas web",
+      certificationCenter: "Academia Informática Indie",
+      theme: "Gestión de bases de datos SQL",
       description: "Aquí la descripción de la certificación obtenida.",
     },
   ]);

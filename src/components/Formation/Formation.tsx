@@ -13,7 +13,7 @@ function Formation() {
   const [activate, setActivate] = useState<boolean>(true);
   const [formations, setFormations] = useState<Formation[]>([
     {
-      trainingCenter: "Centro de formación",
+      trainingCenter: "Escuela Ingeniería Informática",
       theme: "Desarrollo de páginas web",
       date: "2019",
       description:
