@@ -102,6 +102,7 @@ function Formation() {
               onClick={onRemoveFormationModule}
               className="remove-module-button"
               aria-label="Eliminar módulo"
+              title="Eliminar módulo"
             />
           </div>
           <CreateFormation

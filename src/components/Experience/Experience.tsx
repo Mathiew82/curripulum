@@ -102,6 +102,7 @@ function Experience() {
               onClick={onRemoveExperienceModule}
               className="remove-module-button"
               aria-label="Eliminar módulo"
+              title="Eliminar módulo"
             />
           </div>
           <CreateExperience

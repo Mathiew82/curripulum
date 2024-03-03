@@ -101,6 +101,7 @@ function Certificate() {
               onClick={onRemoveCertificateModule}
               className="remove-module-button"
               aria-label="Eliminar módulo"
+              title="Eliminar módulo"
             />
           </div>
           <CreateCertificate
