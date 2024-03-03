@@ -54,6 +54,7 @@ function Name() {
           <img
             src={`${photo || "/images/default-photo.jpg"}`}
             className="photo"
+            alt="Foto por defecto"
           />
           <span className="display-name">{name}</span>
           <button onClick={onToggleEditName} className="edit-button">
@@ -79,6 +80,7 @@ function Name() {
               <img
                 src={`${photo || "/images/default-photo.jpg"}`}
                 className="photo"
+                alt="Foto personal"
               />
               <label className="image-label" htmlFor="image">
                 Cambiar foto
