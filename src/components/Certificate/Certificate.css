@@ -1,17 +1,16 @@
 .certificates {
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid #ccc;
-  margin: 1rem 0;
-  padding-bottom: 2rem;
+  border-right: 5px solid transparent;
+  margin-top: 0.5rem;
+  padding-bottom: 0.6rem;
   position: relative;
 }
 
-.certificates:last-of-type {
-  border-color: transparent;
+.certificates:hover {
+  border-color: #dfdad4;
 }
 
-.certificates:hover {
-  border-color: #aaa;
+.certificates:hover .remove-button {
+  display: inline-block;
 }
 
 .certificates > .theme {

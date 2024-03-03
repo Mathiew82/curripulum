@@ -113,11 +113,15 @@ h3 {
 }
 
 .remove-button {
+  background-color: transparent;
+  border: none;
   color: #888;
   cursor: pointer;
+  display: none;
+  padding: 0;
   position: absolute;
-  top: 1rem;
-  right: 0;
+  top: 0.5rem;
+  right: 0.5rem;
 }
 
 .remove-button:hover {
