@@ -1,6 +1,5 @@
 import { useState } from "react";
 import CreateExperience from "./CreateExperience/CreateExperience.tsx";
-import "./Experience.css";
 
 export type ExperienceType = {
   id: string;
@@ -147,11 +146,8 @@ function Experience() {
           </div>
         </>
       ) : (
-        <div className="wrapper-add-experience-module">
-          <button
-            onClick={addExperienceModule}
-            className="add-experience-module"
-          >
+        <div className="wrapper-add-module">
+          <button onClick={addExperienceModule} className="add-module">
             Agregar experiencia
           </button>
         </div>

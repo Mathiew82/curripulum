@@ -1,6 +1,5 @@
 import { useState } from "react";
 import CreateFormation from "./CreateFormation/CreateFormation.tsx";
-import "./Formation.css";
 
 export type FormationType = {
   id: string;
@@ -144,8 +143,8 @@ function Formation() {
           </div>
         </>
       ) : (
-        <div className="wrapper-add-formation-module">
-          <button onClick={addFormationModule} className="add-formation-module">
+        <div className="wrapper-add-module">
+          <button onClick={addFormationModule} className="add-module">
             Agregar formación
           </button>
         </div>

@@ -116,6 +116,28 @@ h3 {
   margin-bottom: 0.8rem;
 }
 
+.wrapper-add-module {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.add-module {
+  background-color: #ebedf3;
+  border: 2px solid #8c8e93;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 2rem auto 0 auto;
+  padding: 0.5rem 1rem;
+}
+
+.add-module:hover {
+  background-color: #e0e2e8;
+  border-color: #707278;
+}
+
 .edit-button {
   background-color: #ebedf3;
   border: 2px solid #8c8e93;

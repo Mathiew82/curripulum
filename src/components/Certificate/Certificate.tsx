@@ -147,11 +147,8 @@ function Certificate() {
           </div>
         </>
       ) : (
-        <div className="wrapper-add-certificates-module">
-          <button
-            onClick={addCertificatesModule}
-            className="add-certificates-module"
-          >
+        <div className="wrapper-add-module">
+          <button onClick={addCertificatesModule} className="add-module">
             Agregar certificados
           </button>
         </div>
