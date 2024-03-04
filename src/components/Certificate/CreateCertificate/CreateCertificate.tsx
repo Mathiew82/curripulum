@@ -103,7 +103,7 @@ function CreateCertificate({
                 Cancelar
               </button>
               <button className="save" type="submit">
-                Agregar
+                {certificate ? "Guardar" : "Agregar"}
               </button>
             </div>
           </form>
