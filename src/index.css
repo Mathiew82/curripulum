@@ -87,14 +87,9 @@ h3 {
 }
 
 .editable-item {
-  border-right: 5px solid transparent;
   margin-top: 0.5rem;
   padding-bottom: 0.6rem;
   position: relative;
-}
-
-.editable-item:hover {
-  border-color: #dfdad4;
 }
 
 .editable-item:hover .remove-item-button,
@@ -169,11 +164,11 @@ h3 {
 }
 
 .edit-item-button {
-  right: 2.6rem;
+  right: 2rem;
 }
 
 .remove-item-button {
-  right: 0.6rem;
+  right: 0;
 }
 
 .edit-item-button:hover,
@@ -274,10 +269,6 @@ body.preview .wrapper-add-certificates-module,
 body.preview .editable-item .remove-item-button,
 body.preview .editable-item .edit-item-button {
   display: none;
-}
-
-body.preview .editable-item {
-  border-color: transparent;
 }
 
 body.preview .experience,
