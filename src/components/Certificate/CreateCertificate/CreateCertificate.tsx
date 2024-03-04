@@ -88,6 +88,12 @@ function CreateCertificate({
               <label>Descripción</label>
               <textarea
                 onChange={(event) => setDescription(event.target.value)}
+                onFocus={(event) =>
+                  event.currentTarget.setSelectionRange(
+                    event.currentTarget.value.length,
+                    event.currentTarget.value.length,
+                  )
+                }
                 name="description"
                 value={description}
               />
