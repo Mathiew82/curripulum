@@ -17,19 +17,19 @@ interface ItemType {
 function App() {
   const [state, setState] = useState<ItemType[]>([
     { id: 0, name: "Name" },
-    { id: 1, name: "Skills" },
-    { id: 2, name: "Experience" },
-    { id: 3, name: "Formation" },
-    { id: 4, name: "Certificate" },
+    { id: 1, name: "Experience" },
+    { id: 2, name: "Formation" },
+    { id: 3, name: "Certificate" },
+    { id: 4, name: "Skills" },
     { id: 5, name: "Languages" },
   ]);
 
   const componentMapping = [
     Name,
-    Skills,
     Experience,
     Formation,
     Certificate,
+    Skills,
     Languages,
   ];
 
