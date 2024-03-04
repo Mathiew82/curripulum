@@ -80,7 +80,9 @@ function Certificate() {
               >
                 <h3>{certificate.certificationCenter}</h3>
                 <div className="line-1">{certificate.theme}</div>
-                <div className="line-3">{certificate.description}</div>
+                <div className="line-3 certificate">
+                  {certificate.description}
+                </div>
                 <button
                   onClick={() => onEditCertificate(certificate)}
                   className="edit-item-button"
