@@ -136,10 +136,10 @@ function Experience() {
           />
         </>
       ) : (
-        <div className="wrapper-add-certificates-module">
+        <div className="wrapper-add-experience-module">
           <button
             onClick={addExperienceModule}
-            className="add-certificates-module"
+            className="add-experience-module"
           >
             Agregar experiencia
           </button>
