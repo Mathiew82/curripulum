@@ -1,14 +1,32 @@
+import { useState } from "react";
 import Modal from "../../ui/Modal/Modal.tsx";
-import Certificate from "../Certificate.tsx";
+import { CertificateType } from "../Certificate.tsx";
+import { generateId } from "../../../utils/generateId.ts";
 import "./CreateCertificate.css";
 
 interface Props {
   active: boolean;
   closeModal: Function;
   addCertificate: Function;
+  updateCertificate: Function;
+  certificate: CertificateType;
 }
 
-function CreateCertificate({ active, closeModal, addCertificate }: Props) {
+function CreateCertificate({
+  active,
+  closeModal,
+  addCertificate,
+  updateCertificate,
+  certificate,
+}: Props) {
+  const [certificationCenter, setCertificationCenter] = useState<string>(
+    certificate?.certificationCenter || "",
+  );
+  const [theme, setTheme] = useState<string>(certificate?.theme || "");
+  const [description, setDescription] = useState<string>(
+    certificate?.description || "",
+  );
+
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -22,7 +40,16 @@ function CreateCertificate({ active, closeModal, addCertificate }: Props) {
       newObject[key] = (formJson[key] as string).trim();
     }
 
-    addCertificate(newObject as Certificate);
+    if (certificate) {
+      certificate.certificationCenter = certificationCenter;
+      certificate.theme = theme;
+      certificate.description = description;
+
+      updateCertificate(certificate);
+    } else {
+      addCertificate(newObject as unknown as CertificateType);
+    }
+
     closeModal(false);
   };
 
@@ -36,17 +63,34 @@ function CreateCertificate({ active, closeModal, addCertificate }: Props) {
       <Modal active={active} title="Agregar nueva formación">
         <div className="create-certificate">
           <form onSubmit={onSubmit}>
+            <input
+              type="hidden"
+              name="id"
+              value={certificate ? certificate.id : generateId()}
+            />
             <div className="field">
               <label>Certificación obtenida por</label>
-              <input name="certificationCenter" />
+              <input
+                onChange={(event) => setCertificationCenter(event.target.value)}
+                name="certificationCenter"
+                value={certificationCenter}
+              />
             </div>
             <div className="field">
               <label>Certificación</label>
-              <input name="theme" />
+              <input
+                onChange={(event) => setTheme(event.target.value)}
+                name="theme"
+                value={theme}
+              />
             </div>
             <div className="field">
               <label>Descripción</label>
-              <textarea name="description" />
+              <textarea
+                onChange={(event) => setDescription(event.target.value)}
+                name="description"
+                value={description}
+              />
             </div>
             <div className="wrapper-buttons">
               <button onClick={onCancel} className="cancel">
