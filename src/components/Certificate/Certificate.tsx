@@ -2,7 +2,8 @@ import { useState } from "react";
 import CreateCertificate from "./CreateCertificate/CreateCertificate.tsx";
 import "./Certificate.css";
 
-type Certificate = {
+export type CertificateType = {
+  id: string;
   certificationCenter: string;
   theme: string;
   description: string;
@@ -10,8 +11,11 @@ type Certificate = {
 
 function Certificate() {
   const [activate, setActivate] = useState<boolean>(true);
-  const [certificates, setCertificates] = useState<Certificate[]>([
+  const [currentCertificate, setCurrentCertificate] =
+    useState<CertificateType | null>(null);
+  const [certificates, setCertificates] = useState<CertificateType[]>([
     {
+      id: "v10aE1ftEmDkCOGMmHSAVD1VesYXnD1T",
       certificationCenter: "Academia Informática Indie",
       theme: "Gestión de bases de datos SQL",
       description: "Aquí la descripción de la certificación obtenida.",
@@ -21,17 +25,38 @@ function Certificate() {
   const [showCreateCertificateModal, setShowCreateCertificateModal] =
     useState<boolean>(false);
 
-  const onRemoveCertificate = (certificateToRemove: Certificate): void => {
+  const onCreateCertificate = (): void => {
+    setCurrentCertificate(null);
+    setShowCreateCertificateModal(true);
+  };
+
+  const onRemoveCertificate = (certificateIdToRemove: string): void => {
     const newCertificates = certificates.filter(
-      (certificate: Certificate) => certificate !== certificateToRemove,
+      (certificate: CertificateType) =>
+        certificate.id !== certificateIdToRemove,
     );
     setCertificates(newCertificates);
   };
 
-  const addCertificate = (certificate: Certificate): void => {
+  const onEditCertificate = (certificate: CertificateType): void => {
+    setCurrentCertificate(certificate);
+    setShowCreateCertificateModal(true);
+  };
+
+  const addCertificate = (certificate: CertificateType): void => {
     const newCertificates = [...certificates];
     newCertificates.push(certificate);
     setCertificates(newCertificates);
+  };
+
+  const onUpdateCertificate = (certificateToUpdate: CertificateType): void => {
+    certificates.forEach((certificate: CertificateType) => {
+      if (certificate.id === certificateToUpdate.id) {
+        certificate = certificateToUpdate;
+      }
+    });
+
+    setCertificates(certificates);
   };
 
   const onRemoveCertificateModule = (): void => {
@@ -48,7 +73,7 @@ function Certificate() {
         <>
           <div id="certificates" className="editable">
             <h2>Certificados</h2>
-            {certificates.map((certificate: Certificate) => (
+            {certificates.map((certificate: CertificateType) => (
               <div
                 className="certificates"
                 key={certificate.certificationCenter}
@@ -57,8 +82,28 @@ function Certificate() {
                 <div className="theme">{certificate.theme}</div>
                 <div className="description">{certificate.description}</div>
                 <button
-                  onClick={() => onRemoveCertificate(certificate)}
-                  className="remove-button"
+                  onClick={() => onEditCertificate(certificate)}
+                  className="edit-item-button"
+                  title="Editar este item"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    fill="none"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path
+                      d="M17.828 2a3 3 0 0 1 1.977 .743l.145 .136l1.171 1.17a3 3 0 0 1 .136 4.1l-.136 .144l-1.706 1.707l2.292 2.293a1 1 0 0 1 .083 1.32l-.083 .094l-4 4a1 1 0 0 1 -1.497 -1.32l.083 -.094l3.292 -3.293l-1.586 -1.585l-7.464 7.464a3.828 3.828 0 0 1 -2.474 1.114l-.233 .008c-.674 0 -1.33 -.178 -1.905 -.508l-1.216 1.214a1 1 0 0 1 -1.497 -1.32l.083 -.094l1.214 -1.216a3.828 3.828 0 0 1 .454 -4.442l.16 -.17l10.586 -10.586a3 3 0 0 1 1.923 -.873l.198 -.006zm0 2a1 1 0 0 0 -.608 .206l-.099 .087l-1.707 1.707l2.586 2.585l1.707 -1.706a1 1 0 0 0 .284 -.576l.01 -.131a1 1 0 0 0 -.207 -.609l-.087 -.099l-1.171 -1.171a1 1 0 0 0 -.708 -.293z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => onRemoveCertificate(certificate.id)}
+                  className="remove-item-button"
                   title="Eliminar este item"
                 >
                   <svg
@@ -84,7 +129,7 @@ function Certificate() {
             ))}
 
             <button
-              onClick={() => setShowCreateCertificateModal(true)}
+              onClick={() => onCreateCertificate()}
               className="edit-button"
             >
               <svg
@@ -108,11 +153,6 @@ function Certificate() {
               title="Eliminar módulo"
             />
           </div>
-          <CreateCertificate
-            active={showCreateCertificateModal}
-            closeModal={setShowCreateCertificateModal}
-            addCertificate={addCertificate}
-          />
         </>
       ) : (
         <div className="wrapper-add-certificates-module">
@@ -123,6 +163,15 @@ function Certificate() {
             Agregar certificados
           </button>
         </div>
+      )}
+      {showCreateCertificateModal && (
+        <CreateCertificate
+          active={showCreateCertificateModal}
+          closeModal={setShowCreateCertificateModal}
+          addCertificate={addCertificate}
+          updateCertificate={onUpdateCertificate}
+          certificate={currentCertificate as CertificateType}
+        />
       )}
     </>
   );

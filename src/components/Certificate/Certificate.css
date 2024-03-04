@@ -9,7 +9,8 @@
   border-color: #dfdad4;
 }
 
-.certificates:hover .remove-button {
+.certificates:hover .remove-item-button,
+.certificates:hover .edit-item-button {
   display: inline-block;
 }
 
