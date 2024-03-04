@@ -1,14 +1,31 @@
+import { useState } from "react";
 import Modal from "../../ui/Modal/Modal.tsx";
-import Experience from "../Experience.tsx";
+import { ExperienceType } from "../Experience.tsx";
+import { generateId } from "../../../utils/generateId.ts";
 import "./CreateExperience.css";
 
 interface Props {
   active: boolean;
   closeModal: Function;
   addExperience: Function;
+  updateExperience: Function;
+  experience: ExperienceType;
 }
 
-function CreateExperience({ active, closeModal, addExperience }: Props) {
+function CreateExperience({
+  active,
+  closeModal,
+  addExperience,
+  updateExperience,
+  experience,
+}: Props) {
+  const [company, setCompany] = useState<string>(experience?.company || "");
+  const [position, setPosition] = useState<string>(experience?.position || "");
+  const [duration, setDuration] = useState<string>(experience?.duration || "");
+  const [description, setDescription] = useState<string>(
+    experience?.description || "",
+  );
+
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -22,7 +39,17 @@ function CreateExperience({ active, closeModal, addExperience }: Props) {
       newObject[key] = (formJson[key] as string).trim();
     }
 
-    addExperience(newObject as Experience);
+    if (experience) {
+      experience.company = company;
+      experience.position = position;
+      experience.duration = duration;
+      experience.description = description;
+
+      updateExperience(experience);
+    } else {
+      addExperience(newObject as unknown as ExperienceType);
+    }
+
     closeModal(false);
   };
 
@@ -36,21 +63,48 @@ function CreateExperience({ active, closeModal, addExperience }: Props) {
       <Modal active={active} title="Agregar nueva experiencia">
         <div className="create-experience">
           <form onSubmit={onSubmit}>
+            <input
+              type="hidden"
+              name="id"
+              value={experience ? experience.id : generateId()}
+            />
             <div className="field">
               <label>Empresa</label>
-              <input name="company" />
+              <input
+                onChange={(event) => setCompany(event.target.value)}
+                name="company"
+                value={company}
+              />
             </div>
             <div className="field">
               <label>Posición</label>
-              <input name="position" />
+              <input
+                onChange={(event) => setPosition(event.target.value)}
+                name="position"
+                value={position}
+              />
             </div>
             <div className="field">
               <label>Duración</label>
-              <input name="duration" />
+              <input
+                onChange={(event) => setDuration(event.target.value)}
+                name="duration"
+                value={duration}
+              />
             </div>
             <div className="field">
               <label>Descripción</label>
-              <textarea name="description" />
+              <textarea
+                onChange={(event) => setDescription(event.target.value)}
+                onFocus={(event) =>
+                  event.currentTarget.setSelectionRange(
+                    event.currentTarget.value.length,
+                    event.currentTarget.value.length,
+                  )
+                }
+                name="description"
+                value={description}
+              />
             </div>
             <div className="wrapper-buttons">
               <button onClick={onCancel} className="cancel">

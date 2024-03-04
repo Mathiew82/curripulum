@@ -2,7 +2,8 @@ import { useState } from "react";
 import CreateExperience from "./CreateExperience/CreateExperience.tsx";
 import "./Experience.css";
 
-type Experience = {
+export type ExperienceType = {
+  id: string;
   company: string;
   position: string;
   duration: string;
@@ -11,8 +12,11 @@ type Experience = {
 
 function Experience() {
   const [activate, setActivate] = useState<boolean>(true);
-  const [experiences, setExperiences] = useState<Experience[]>([
+  const [currentExperience, setCurrentExperience] =
+    useState<ExperienceType | null>(null);
+  const [experiences, setExperiences] = useState<ExperienceType[]>([
     {
+      id: "v10aE1ftEmDkCOGMmHSAVD1VesYXnD1T",
       company: "Empresa",
       position: "Posición",
       duration: "jun. 2021 - actualidad",
@@ -24,17 +28,37 @@ function Experience() {
   const [showCreateExperienceModal, setShowCreateExperienceModal] =
     useState<boolean>(false);
 
-  const onRemoveExperience = (experienceToRemove: Experience): void => {
-    const newExperiences = experiences.filter(
-      (experience: Experience) => experience !== experienceToRemove,
-    );
-    setExperiences(newExperiences);
+  const onCreateExperience = (): void => {
+    setCurrentExperience(null);
+    setShowCreateExperienceModal(true);
   };
 
-  const addExperience = (experience: Experience): void => {
+  const onRemoveExperience = (experienceIdToRemove: string): void => {
+    const newFormations = experiences.filter(
+      (experience: ExperienceType) => experience.id !== experienceIdToRemove,
+    );
+    setExperiences(newFormations);
+  };
+
+  const onEditExperience = (experience: ExperienceType): void => {
+    setCurrentExperience(experience);
+    setShowCreateExperienceModal(true);
+  };
+
+  const addExperience = (experience: ExperienceType): void => {
     const newExperiences = [...experiences];
     newExperiences.push(experience);
     setExperiences(newExperiences);
+  };
+
+  const onUpdateExperience = (experienceToUpdate: ExperienceType): void => {
+    experiences.forEach((experience: ExperienceType) => {
+      if (experience.id === experienceToUpdate.id) {
+        experience = experienceToUpdate;
+      }
+    });
+
+    setExperiences(experiences);
   };
 
   const onRemoveExperienceModule = (): void => {
@@ -51,52 +75,44 @@ function Experience() {
         <>
           <div className="editable">
             <h2>Experiencia</h2>
-            {experiences.map((experience: Experience) => (
+            {experiences.map((experience: ExperienceType) => (
               <div className="experience" key={experience.company}>
                 <h3>{experience.company}</h3>
                 <div className="position">{experience.position}</div>
                 <div className="duration">{experience.duration}</div>
                 <div className="description">{experience.description}</div>
-                {/* <button */}
-                {/*   onClick={() => onRemoveExperience(experience)} */}
-                {/*   className="edit-item-button" */}
-                {/*   title="Editar este item" */}
-                {/* > */}
-                {/*   <svg */}
-                {/*     xmlns="http://www.w3.org/2000/svg" */}
-                {/*     width="24" */}
-                {/*     height="24" */}
-                {/*     viewBox="0 0 24 24" */}
-                {/*     stroke="currentColor" */}
-                {/*     fill="none" */}
-                {/*   > */}
-                {/*     <path stroke="none" d="M0 0h24v24H0z" fill="none" /> */}
-                {/*     <path */}
-                {/*       d="M17.828 2a3 3 0 0 1 1.977 .743l.145 .136l1.171 1.17a3 3 0 0 1 .136 4.1l-.136 .144l-1.706 1.707l2.292 2.293a1 1 0 0 1 .083 1.32l-.083 .094l-4 4a1 1 0 0 1 -1.497 -1.32l.083 -.094l3.292 -3.293l-1.586 -1.585l-7.464 7.464a3.828 3.828 0 0 1 -2.474 1.114l-.233 .008c-.674 0 -1.33 -.178 -1.905 -.508l-1.216 1.214a1 1 0 0 1 -1.497 -1.32l.083 -.094l1.214 -1.216a3.828 3.828 0 0 1 .454 -4.442l.16 -.17l10.586 -10.586a3 3 0 0 1 1.923 -.873l.198 -.006zm0 2a1 1 0 0 0 -.608 .206l-.099 .087l-1.707 1.707l2.586 2.585l1.707 -1.706a1 1 0 0 0 .284 -.576l.01 -.131a1 1 0 0 0 -.207 -.609l-.087 -.099l-1.171 -1.171a1 1 0 0 0 -.708 -.293z" */}
-                {/*       fill="currentColor" */}
-                {/*     /> */}
-                {/*   </svg> */}
-                {/* </button> */}
                 <button
-                  onClick={() => onRemoveExperience(experience)}
+                  onClick={() => onEditExperience(experience)}
+                  className="edit-item-button"
+                  title="Editar este item"
+                >
+                  <svg
+                    width="20px"
+                    height="20px"
+                    viewBox="0 -2 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="m3.99 16.854-1.314 3.504a.75.75 0 0 0 .966.965l3.503-1.314a3 3 0 0 0 1.068-.687L18.36 9.175s-.354-1.061-1.414-2.122c-1.06-1.06-2.122-1.414-2.122-1.414L4.677 15.786a3 3 0 0 0-.687 1.068zm12.249-12.63 1.383-1.383c.248-.248.579-.406.925-.348.487.08 1.232.322 1.934 1.025.703.703.945 1.447 1.025 1.934.058.346-.1.677-.348.925L19.774 7.76s-.353-1.06-1.414-2.12c-1.06-1.062-2.121-1.415-2.121-1.415z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => onRemoveExperience(experience.id)}
                   className="remove-item-button"
                   title="Eliminar este item"
                 >
                   <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                    width="24px"
+                    height="24px"
+                    viewBox="-3.5 0 19 19"
                     fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path
-                      d="M20 6a1 1 0 0 1 .117 1.993l-.117 .007h-.081l-.919 11a3 3 0 0 1 -2.824 2.995l-.176 .005h-8c-1.598 0 -2.904 -1.249 -2.992 -2.75l-.005 -.167l-.923 -11.083h-.08a1 1 0 0 1 -.117 -1.993l.117 -.007h16zm-9.489 5.14a1 1 0 0 0 -1.218 1.567l1.292 1.293l-1.292 1.293l-.083 .094a1 1 0 0 0 1.497 1.32l1.293 -1.292l1.293 1.292l.094 .083a1 1 0 0 0 1.32 -1.497l-1.292 -1.293l1.292 -1.293l.083 -.094a1 1 0 0 0 -1.497 -1.32l-1.293 1.292l-1.293 -1.292l-.094 -.083z"
-                      fill="currentColor"
-                    />
-                    <path
-                      d="M14 2a2 2 0 0 1 2 2a1 1 0 0 1 -1.993 .117l-.007 -.117h-4l-.007 .117a1 1 0 0 1 -1.993 -.117a2 2 0 0 1 1.85 -1.995l.15 -.005h4z"
+                      d="M11.383 13.644A1.03 1.03 0 0 1 9.928 15.1L6 11.172 2.072 15.1a1.03 1.03 0 1 1-1.455-1.456l3.928-3.928L.617 5.79a1.03 1.03 0 1 1 1.455-1.456L6 8.261l3.928-3.928a1.03 1.03 0 0 1 1.455 1.456L7.455 9.716z"
                       fill="currentColor"
                     />
                   </svg>
@@ -105,7 +121,7 @@ function Experience() {
             ))}
 
             <button
-              onClick={() => setShowCreateExperienceModal(true)}
+              onClick={() => onCreateExperience()}
               className="edit-button"
             >
               <svg
@@ -129,11 +145,6 @@ function Experience() {
               title="Eliminar módulo"
             />
           </div>
-          <CreateExperience
-            active={showCreateExperienceModal}
-            closeModal={setShowCreateExperienceModal}
-            addExperience={addExperience}
-          />
         </>
       ) : (
         <div className="wrapper-add-experience-module">
@@ -144,6 +155,15 @@ function Experience() {
             Agregar experiencia
           </button>
         </div>
+      )}
+      {showCreateExperienceModal && (
+        <CreateExperience
+          active={showCreateExperienceModal}
+          closeModal={setShowCreateExperienceModal}
+          addExperience={addExperience}
+          updateExperience={onUpdateExperience}
+          experience={currentExperience as ExperienceType}
+        />
       )}
     </>
   );

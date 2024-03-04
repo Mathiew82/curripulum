@@ -144,7 +144,7 @@ function Formation() {
           </div>
         </>
       ) : (
-        <div className="wrapper-add-certificates-module">
+        <div className="wrapper-add-formation-module">
           <button onClick={addFormationModule} className="add-formation-module">
             Agregar formación
           </button>
