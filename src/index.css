@@ -15,21 +15,17 @@ body {
 body.font-size-d2 h3 {
   font-size: 16px;
 }
-body.font-size-d2 .position,
-body.font-size-d2 .theme,
-body.font-size-d2 .duration,
-body.font-size-d2 .date,
-body.font-size-d2 .description {
+body.font-size-d2 .line-1,
+body.font-size-d2 .line-2,
+body.font-size-d2 .line-3 {
   font-size: 14px;
 }
 body.font-size-x2 h3 {
   font-size: 20px;
 }
-body.font-size-x2 .position,
-body.font-size-x2 .theme,
-body.font-size-x2 .duration,
-body.font-size-x2 .date,
-body.font-size-x2 .description {
+body.font-size-x2 .line-1,
+body.font-size-x2 .line-2,
+body.font-size-x2 .line-3 {
   font-size: 18px;
 }
 
@@ -274,8 +270,14 @@ body.preview .remove-tag-button,
 body.preview .remove-module-button,
 body.preview .input,
 body.preview .add,
-body.preview .wrapper-add-certificates-module {
+body.preview .wrapper-add-certificates-module,
+body.preview .editable-item .remove-item-button,
+body.preview .editable-item .edit-item-button {
   display: none;
+}
+
+body.preview .editable-item {
+  border-color: transparent;
 }
 
 body.preview .experience,
