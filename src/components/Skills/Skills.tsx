@@ -92,8 +92,8 @@ function Skills() {
           </div>
         </>
       ) : (
-        <div className="wrapper-add-certificates-module">
-          <button onClick={addSkillsModule} className="add-certificates-module">
+        <div className="wrapper-add-module">
+          <button onClick={addSkillsModule} className="add-module">
             Agregar habilidades
           </button>
         </div>

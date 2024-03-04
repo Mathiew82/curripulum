@@ -96,11 +96,8 @@ function Languages() {
           </div>
         </>
       ) : (
-        <div className="wrapper-add-certificates-module">
-          <button
-            onClick={addLanguagesModule}
-            className="add-certificates-module"
-          >
+        <div className="wrapper-add-module">
+          <button onClick={addLanguagesModule} className="add-module">
             Agregar idiomas
           </button>
         </div>
