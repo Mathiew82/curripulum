@@ -9,7 +9,8 @@
   border-color: #dfdad4;
 }
 
-.formation:hover .remove-button {
+.formation:hover .remove-item-button,
+.formation:hover .edit-item-button {
   display: inline-block;
 }
 

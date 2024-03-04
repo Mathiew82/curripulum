@@ -112,7 +112,8 @@ h3 {
   border-color: #707278;
 }
 
-.remove-button {
+.edit-item-button,
+.remove-item-button {
   background-color: transparent;
   border: none;
   color: #888;
@@ -121,10 +122,18 @@ h3 {
   padding: 0;
   position: absolute;
   top: 0.5rem;
+}
+
+.edit-item-button {
+  right: 2.4rem;
+}
+
+.remove-item-button {
   right: 0.5rem;
 }
 
-.remove-button:hover {
+.edit-item-button:hover,
+.remove-item-button:hover {
   color: black;
 }
 
