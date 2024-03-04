@@ -271,8 +271,6 @@ body.preview .editable-item .edit-item-button {
   display: none;
 }
 
-body.preview .experience,
-body.preview .formation,
-body.preview .certificates {
+body.preview .editable-item {
   margin-top: 0;
 }
