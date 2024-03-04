@@ -78,9 +78,9 @@ function Experience() {
             {experiences.map((experience: ExperienceType) => (
               <div className="editable-item" key={experience.company}>
                 <h3>{experience.company}</h3>
-                <div className="position">{experience.position}</div>
-                <div className="duration">{experience.duration}</div>
-                <div className="description">{experience.description}</div>
+                <div className="line-1">{experience.position}</div>
+                <div className="line-2">{experience.duration}</div>
+                <div className="line-3">{experience.description}</div>
                 <button
                   onClick={() => onEditExperience(experience)}
                   className="edit-item-button"

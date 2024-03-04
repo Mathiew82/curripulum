@@ -79,8 +79,8 @@ function Certificate() {
                 key={certificate.certificationCenter}
               >
                 <h3>{certificate.certificationCenter}</h3>
-                <div className="theme">{certificate.theme}</div>
-                <div className="description">{certificate.description}</div>
+                <div className="line-1">{certificate.theme}</div>
+                <div className="line-3">{certificate.description}</div>
                 <button
                   onClick={() => onEditCertificate(certificate)}
                   className="edit-item-button"

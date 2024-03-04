@@ -78,9 +78,9 @@ function Formation() {
             {formations.map((formation: FormationType) => (
               <div className="editable-item" key={formation.trainingCenter}>
                 <h3>{formation.trainingCenter}</h3>
-                <div className="theme">{formation.theme}</div>
-                <div className="date">{formation.date}</div>
-                <div className="description">{formation.description}</div>
+                <div className="line-1">{formation.theme}</div>
+                <div className="line-2">{formation.date}</div>
+                <div className="line-3">{formation.description}</div>
                 <button
                   onClick={() => onEditFormation(formation)}
                   className="edit-item-button"
