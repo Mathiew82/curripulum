@@ -76,7 +76,7 @@ function Formation() {
           <div className="editable">
             <h2>Formación</h2>
             {formations.map((formation: FormationType) => (
-              <div className="formation" key={formation.trainingCenter}>
+              <div className="editable-item" key={formation.trainingCenter}>
                 <h3>{formation.trainingCenter}</h3>
                 <div className="theme">{formation.theme}</div>
                 <div className="date">{formation.date}</div>

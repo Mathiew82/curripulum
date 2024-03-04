@@ -75,7 +75,7 @@ function Certificate() {
             <h2>Certificados</h2>
             {certificates.map((certificate: CertificateType) => (
               <div
-                className="certificates"
+                className="editable-item"
                 key={certificate.certificationCenter}
               >
                 <h3>{certificate.certificationCenter}</h3>

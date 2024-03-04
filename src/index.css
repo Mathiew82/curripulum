@@ -90,6 +90,22 @@ h3 {
   cursor: ns-resize;
 }
 
+.editable-item {
+  border-right: 5px solid transparent;
+  margin-top: 0.5rem;
+  padding-bottom: 0.6rem;
+  position: relative;
+}
+
+.editable-item:hover {
+  border-color: #dfdad4;
+}
+
+.editable-item:hover .remove-item-button,
+.editable-item:hover .edit-item-button {
+  display: inline-block;
+}
+
 .edit-button {
   background-color: #ebedf3;
   border: 2px solid #8c8e93;

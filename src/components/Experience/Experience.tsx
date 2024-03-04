@@ -76,7 +76,7 @@ function Experience() {
           <div className="editable">
             <h2>Experiencia</h2>
             {experiences.map((experience: ExperienceType) => (
-              <div className="experience" key={experience.company}>
+              <div className="editable-item" key={experience.company}>
                 <h3>{experience.company}</h3>
                 <div className="position">{experience.position}</div>
                 <div className="duration">{experience.duration}</div>
