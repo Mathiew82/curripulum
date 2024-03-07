@@ -268,7 +268,7 @@ body.preview .add,
 body.preview .wrapper-add-certificates-module,
 body.preview .editable-item .remove-item-button,
 body.preview .editable-item .edit-item-button,
-body.preview .add-module {
+body.preview .wrapper-add-module {
   display: none;
 }
 
