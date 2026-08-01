@@ -23,4 +23,9 @@
   --linkedin-button-color-hover: #d0e8e5;
   --linkedin-button-border-color: #1b6b62;
   --linkedin-button-border-color-hover: #0b5b52;
+
+  --default-button-color: #ebedf3;
+  --default-button-color-hover: #e0e2e8;
+  --default-button-border-color: #8c8e93;
+  --default-button-border-color-hover: #707278;
 }
