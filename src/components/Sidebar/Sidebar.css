@@ -20,27 +20,26 @@
 
 .sidebar-toggle {
   position: absolute;
-  left: -40px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 60px;
-  background-color: #ccced3;
-  border: 2px solid #8c8e93;
+  left: -30px;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  background-color: #f0f1f5;
+  border-top: none;
   border-right: none;
-  border-radius: 8px 0 0 8px;
+  border-bottom: 2px solid #8c8e93;
+  border-left: 2px solid #8c8e93;
+  border-radius: 0 0 0 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #555;
-  z-index: 101;
 }
 
 .sidebar-toggle:hover {
-  background-color: #babbc0;
-  border-color: #707278;
-  color: #222;
+  background-color: #e0e1e5;
+  border-color: #7c7e83;
 }
 
 .sidebar-content {
@@ -48,7 +47,7 @@
   width: 400px;
   background-color: #f0f1f5;
   border-left: 2px solid #8c8e93;
-  padding: 1rem;
+  padding: 1.4rem 1rem 1rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
