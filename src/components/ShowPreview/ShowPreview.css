@@ -1,7 +1,8 @@
 .show-preview-button {
   background-color: #e0f3e9;
-  border: 2px solid #7b8a86;
+  border: 2px solid #1b6a2b;
   border-radius: 8px;
+  color: #1b6a2b;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -20,7 +21,7 @@
 
 .show-preview-button:hover {
   background-color: #d0e1d9;
-  border-color: #5b6a66;
+  border-color: #0b5a1b;
 }
 
 .info-text {
