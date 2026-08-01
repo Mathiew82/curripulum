@@ -91,7 +91,7 @@ function GeneratePDF() {
           <path d="M20 15h-3v6" />
           <path d="M11 15v6h1a2 2 0 0 0 2 -2v-2a2 2 0 0 0 -2 -2h-1" />
         </svg>
-        Generar PDF
+        Generar archivo PDF
       </button>
       <Modal title="Generar PDF" active={showModal}>
         <div className="generate-pdf-content">
