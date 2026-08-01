@@ -3,6 +3,7 @@ import Settings from "../Settings/Settings";
 import ShowPreview from "../ShowPreview/ShowPreview";
 import GeneratePDF from "../GeneratePDF/GeneratePDF";
 import AtsOptimization from "../AtsOptimization/AtsOptimization";
+import LinkedinImport from "../LinkedinImport/LinkedinImport";
 import "./Sidebar.css";
 
 function Sidebar() {
@@ -35,8 +36,9 @@ function Sidebar() {
         <div className="sidebar-content">
           <Settings />
           <ShowPreview />
-          <AtsOptimization />
           <GeneratePDF />
+          <LinkedinImport />
+          <AtsOptimization />
         </div>
       </aside>
     </div>
