@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Settings from "../Settings/Settings";
 import ShowPreview from "../ShowPreview/ShowPreview";
+import GeneratePDF from "../GeneratePDF/GeneratePDF";
 import "./Sidebar.css";
 
 function Sidebar() {
@@ -30,10 +31,11 @@ function Sidebar() {
       <aside
         className={`sidebar ${isOpen ? "sidebar-open" : "sidebar-closed"}`}
       >
-        <div className="sidebar-content">
-          <Settings />
-          <ShowPreview />
-        </div>
+      <div className="sidebar-content">
+        <Settings />
+        <ShowPreview />
+        <GeneratePDF />
+      </div>
       </aside>
     </div>
   );
