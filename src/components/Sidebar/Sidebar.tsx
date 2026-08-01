@@ -37,8 +37,8 @@ function Sidebar() {
           <Settings />
           <ShowPreview />
           <LinkedinImport />
-          <GeneratePDF />
           <AtsOptimization />
+          <GeneratePDF />
         </div>
       </aside>
     </div>
