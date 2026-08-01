@@ -1,0 +1,21 @@
+:root {
+  --primary-button-color: #e0edf5;
+  --primary-button-color-hover: #d0dde8;
+  --primary-button-border-color: #1b4a6b;
+  --primary-button-border-color-hover: #0b3a5b;
+
+  --pdf-button-color: #fff0f4;
+  --pdf-button-color-hover: #efe0e4;
+  --pdf-button-border-color: #ba3b5b;
+  --pdf-button-border-color-hover: #aa2b4b;
+
+  --download-button-color: #e3f6ec;
+  --download-button-color-hover: #d0e1d9;
+  --download-button-border-color: #1b6a2b;
+  --download-button-border-color-hover: #0b5a1b;
+
+  --ai-button-color: #ede0f5;
+  --ai-button-color-hover: #ddd0e8;
+  --ai-button-border-color: #6b3b9a;
+  --ai-button-border-color-hover: #5b2b8a;
+}
