@@ -24,7 +24,7 @@ function Sidebar() {
           stroke="currentColor"
           strokeWidth="2"
         >
-          <polyline points={isOpen ? "15 18 9 12 15 6" : "9 18 15 12 9 6"} />
+          <polyline points={isOpen ? "9 18 15 12 9 6" : "15 18 9 12 15 6"} />
         </svg>
       </button>
       <div className="sidebar-content">
