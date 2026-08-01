@@ -1,14 +1,15 @@
 * {
   box-sizing: border-box;
-  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+  font-family:
+    system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 body {
   display: flex;
   justify-content: center;
-  margin: 1.5rem 0 4rem 0;
-  padding: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
 /* Font Size Resize */
@@ -38,16 +39,19 @@ body.spacing-x2 .editable {
 }
 
 #root {
-  width: 1200px;
+  width: 100%;
 }
 
 .app-layout {
   display: flex;
+  align-items: stretch;
+  min-height: 100vh;
 }
 
 .main-content {
   flex: 1;
   min-width: 0;
+  padding: 1rem 4rem 4rem 2rem;
 }
 
 ul {
