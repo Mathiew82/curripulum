@@ -33,20 +33,22 @@ function App() {
   ];
 
   return (
-    <>
+    <div className="app-layout">
+      <main className="main-content">
+        <ReactSortable
+          list={state}
+          setList={setState}
+          animation={200}
+          ghostClass="blue-background-class"
+        >
+          {state.map((item: ItemType) => {
+            const Component = componentMapping[item.id];
+            return <Component key={item.id} />;
+          })}
+        </ReactSortable>
+      </main>
       <Sidebar />
-      <ReactSortable
-        list={state}
-        setList={setState}
-        animation={200}
-        ghostClass="blue-background-class"
-      >
-        {state.map((item: ItemType) => {
-          const Component = componentMapping[item.id];
-          return <Component key={item.id} />;
-        })}
-      </ReactSortable>
-    </>
+    </div>
   );
 }
 
