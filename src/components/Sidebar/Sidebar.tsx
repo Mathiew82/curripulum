@@ -36,8 +36,8 @@ function Sidebar() {
         <div className="sidebar-content">
           <Settings />
           <ShowPreview />
-          <GeneratePDF />
           <LinkedinImport />
+          <GeneratePDF />
           <AtsOptimization />
         </div>
       </aside>
