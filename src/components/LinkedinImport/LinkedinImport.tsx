@@ -15,9 +15,8 @@ function LinkedinImport() {
         stroke-linejoin="round"
       >
         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0 -2 -2a2 2 0 0 0 -2 2v7h-4v-7a6 6 0 0 1 6 -6z" />
-        <path d="M2 9h4v12h-4z" />
-        <path d="M4 2a2 2 0 1 1 0 4a2 2 0 1 1 0 -4z" />
+        <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+        <path d="M5 13v-8a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2h-5.5m-9.5 -2h7m-3 -3l3 3l-3 3" />
       </svg>
       Importar desde LinkedIn
     </button>
