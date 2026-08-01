@@ -43,7 +43,7 @@ function App() {
         animation={200}
         ghostClass="blue-background-class"
       >
-        {state.map((item) => {
+        {state.map((item: ItemType) => {
           const Component = componentMapping[item.id];
           return <Component key={item.id} />;
         })}
