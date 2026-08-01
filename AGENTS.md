@@ -1,4 +1,9 @@
 ## RULES
-- Always use the caveman skill.
-- Never use npm. Always use pnpm.
-- Do not install dependencies without asking for authorization.
+
+- Use caveman skill.
+- Use pnpm (never npm).
+- Ask before installing deps.
+- No trailing whitespace.
+- End files with a single newline.
+- Use LF line endings.
+- No invisible characters.
