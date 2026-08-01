@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Skills.css";
+import { cvStore } from "../../store/cvStore";
 
 function Skills() {
   const [activate, setActivate] = useState<boolean>(true);
@@ -44,6 +45,14 @@ function Skills() {
   const addSkillsModule = (): void => {
     setActivate(true);
   };
+
+  useEffect(() => {
+    cvStore.setSkills(skills);
+  }, [skills]);
+
+  useEffect(() => {
+    cvStore.setSkillsActive(activate);
+  }, [activate]);
 
   return (
     <>

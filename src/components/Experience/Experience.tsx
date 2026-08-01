@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CreateExperience from "./CreateExperience/CreateExperience.tsx";
+import { cvStore } from "../../store/cvStore";
 
 export type ExperienceType = {
   id: string;
@@ -67,6 +68,14 @@ function Experience() {
   const addExperienceModule = (): void => {
     setActivate(true);
   };
+
+  useEffect(() => {
+    cvStore.setExperiences(experiences);
+  }, [experiences]);
+
+  useEffect(() => {
+    cvStore.setExperiencesActive(activate);
+  }, [activate]);
 
   return (
     <>

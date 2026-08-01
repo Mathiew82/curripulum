@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CreateFormation from "./CreateFormation/CreateFormation.tsx";
+import { cvStore } from "../../store/cvStore";
 
 export type FormationType = {
   id: string;
@@ -67,6 +68,14 @@ function Formation() {
   const addFormationModule = (): void => {
     setActivate(true);
   };
+
+  useEffect(() => {
+    cvStore.setFormations(formations);
+  }, [formations]);
+
+  useEffect(() => {
+    cvStore.setFormationsActive(activate);
+  }, [activate]);
 
   return (
     <>

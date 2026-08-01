@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Languages.css";
+import { cvStore } from "../../store/cvStore";
 
 function Languages() {
   const [activate, setActivate] = useState<boolean>(true);
@@ -48,6 +49,14 @@ function Languages() {
   const addLanguagesModule = (): void => {
     setActivate(true);
   };
+
+  useEffect(() => {
+    cvStore.setLanguages(languages);
+  }, [languages]);
+
+  useEffect(() => {
+    cvStore.setLanguagesActive(activate);
+  }, [activate]);
 
   return (
     <>

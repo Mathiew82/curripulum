@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CreateCertificate from "./CreateCertificate/CreateCertificate.tsx";
 import "./Certificate.css";
+import { cvStore } from "../../store/cvStore";
 
 export type CertificateType = {
   id: string;
@@ -66,6 +67,14 @@ function Certificate() {
   const addCertificatesModule = (): void => {
     setActivate(true);
   };
+
+  useEffect(() => {
+    cvStore.setCertificates(certificates);
+  }, [certificates]);
+
+  useEffect(() => {
+    cvStore.setCertificatesActive(activate);
+  }, [activate]);
 
   return (
     <>

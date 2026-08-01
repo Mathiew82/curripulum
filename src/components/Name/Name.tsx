@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Name.css";
+import { cvStore } from "../../store/cvStore";
 
 function Name() {
   const [name, setName] = useState<string>("Pepe Pérez García");
@@ -46,6 +47,14 @@ function Name() {
       (inputNameElement as HTMLInputElement).focus();
     }
   }, [editingName]);
+
+  useEffect(() => {
+    cvStore.setName(name);
+  }, [name]);
+
+  useEffect(() => {
+    cvStore.setPhoto((photo as string) || null);
+  }, [photo]);
 
   return (
     <>

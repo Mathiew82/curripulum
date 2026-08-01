@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ReactSortable } from "react-sortablejs";
 import Name from "./components/Name/Name";
 import Skills from "./components/Skills/Skills";
@@ -7,6 +7,7 @@ import Formation from "./components/Formation/Formation";
 import Certificate from "./components/Certificate/Certificate";
 import Languages from "./components/Languages/Languages";
 import Sidebar from "./components/Sidebar/Sidebar";
+import { cvStore } from "./store/cvStore";
 
 interface ItemType {
   id: number;
@@ -22,6 +23,10 @@ function App() {
     { id: 4, name: "Skills" },
     { id: 5, name: "Languages" },
   ]);
+
+  useEffect(() => {
+    cvStore.setSectionOrder(state);
+  }, [state]);
 
   const componentMapping = [
     Name,

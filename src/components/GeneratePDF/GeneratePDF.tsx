@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
-import html2pdf from "html2pdf.js";
+import { pdf } from "@react-pdf/renderer";
 import Modal from "../ui/Modal/Modal";
+import CvPdfDocument from "../CvPdf/CvPdfDocument";
 import "./GeneratePDF.css";
 
 function GeneratePDF() {
@@ -16,35 +17,13 @@ function GeneratePDF() {
     setIsReady(false);
     setError(null);
 
-    document.body.classList.add("preview");
-
     try {
-      const element = document.querySelector(".main-content") as HTMLElement;
-
-      const opt = {
-        margin: [0, 0, 0, 0] as [number, number, number, number],
-        filename: "curriculum.pdf",
-        image: { type: "jpeg" as const, quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
-        jsPDF: {
-          unit: "mm",
-          format: "a4",
-          orientation: "portrait" as const,
-        },
-      };
-
-      const blob = await html2pdf()
-        .set(opt)
-        .from(element)
-        .toPdf()
-        .outputPdf("blob");
-
+      const blob = await pdf(<CvPdfDocument />).toBlob();
       pdfBlobRef.current = blob;
       setIsReady(true);
     } catch (err) {
       setError("Error al generar el PDF. Inténtalo de nuevo.");
     } finally {
-      document.body.classList.remove("preview");
       setIsGenerating(false);
     }
   };
@@ -91,7 +70,7 @@ function GeneratePDF() {
           <path d="M20 15h-3v6" />
           <path d="M11 15v6h1a2 2 0 0 0 2 -2v-2a2 2 0 0 0 -2 -2h-1" />
         </svg>
-        Generar archivo PDF
+        Generar PDF
       </button>
       <Modal title="Generar PDF" active={showModal}>
         <div className="generate-pdf-content">
