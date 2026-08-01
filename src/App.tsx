@@ -2,12 +2,11 @@ import { useState } from "react";
 import { ReactSortable } from "react-sortablejs";
 import Name from "./components/Name/Name";
 import Skills from "./components/Skills/Skills";
-import ShowPreview from "./components/ShowPreview/ShowPreview";
 import Experience from "./components/Experience/Experience";
 import Formation from "./components/Formation/Formation";
 import Certificate from "./components/Certificate/Certificate";
 import Languages from "./components/Languages/Languages";
-import Settings from "./components/Settings/Settings";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 interface ItemType {
   id: number;
@@ -35,8 +34,7 @@ function App() {
 
   return (
     <>
-      <Settings />
-      <ShowPreview />
+      <Sidebar />
       <ReactSortable
         list={state}
         setList={setState}
