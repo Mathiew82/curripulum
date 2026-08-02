@@ -4,6 +4,9 @@
 - Always use the **caveman** skill.
 - Package manager: **pnpm** only (never npm).
 
+### Skills
+- Always use the **vercel-react-best-practices** skill.
+
 ### Actions
 - Ask for authorization before installing any dependency.
 
