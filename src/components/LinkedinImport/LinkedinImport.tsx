@@ -22,7 +22,7 @@ function LinkedinImport() {
         <path d="M9 15h6" />
         <path d="M12.5 17.5l2.5 -2.5l-2.5 -2.5" />
       </svg>
-      Importar desde LinkedIn
+      Importar de LinkedIn
     </button>
   );
 }
