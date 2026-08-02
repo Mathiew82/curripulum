@@ -128,7 +128,7 @@ function Formation() {
               </div>
             ))}
 
-            <button onClick={() => onCreateFormation()} className="edit-button">
+            <button onClick={() => onCreateFormation()} className="button default edit-button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="14"
@@ -153,7 +153,7 @@ function Formation() {
         </>
       ) : (
         <div className="wrapper-add-module">
-          <button onClick={addFormationModule} className="add-module">
+          <button onClick={addFormationModule} className="button default add-module">
             Agregar formación
           </button>
         </div>

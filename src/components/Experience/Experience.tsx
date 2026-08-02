@@ -130,7 +130,7 @@ function Experience() {
 
             <button
               onClick={() => onCreateExperience()}
-              className="edit-button"
+              className="button default edit-button"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -156,7 +156,7 @@ function Experience() {
         </>
       ) : (
         <div className="wrapper-add-module">
-          <button onClick={addExperienceModule} className="add-module">
+          <button onClick={addExperienceModule} className="button default add-module">
             Agregar experiencia
           </button>
         </div>

@@ -66,7 +66,7 @@ function Name() {
             alt="Foto por defecto"
           />
           <span className="display-name">{name}</span>
-          <button onClick={onToggleEditName} className="edit-button">
+          <button onClick={onToggleEditName} className="button default edit-button">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="14"
@@ -122,7 +122,7 @@ function Name() {
           />
           <button
             onClick={onToggleEditName}
-            className="save-name-button edit-button"
+            className="button default save-name-button edit-button"
           >
             guardar
           </button>

@@ -111,9 +111,10 @@ function GeneratePDF() {
             </button>
           )}
           <button
-            className="generate-pdf-close"
+            className="button default"
             onClick={handleClose}
             disabled={isGenerating}
+            style={{ marginTop: "0.5rem" }}
           >
             Cerrar
           </button>

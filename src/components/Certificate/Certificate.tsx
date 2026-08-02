@@ -133,7 +133,7 @@ function Certificate() {
 
             <button
               onClick={() => onCreateCertificate()}
-              className="edit-button"
+              className="button default edit-button"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -159,7 +159,7 @@ function Certificate() {
         </>
       ) : (
         <div className="wrapper-add-module">
-          <button onClick={addCertificatesModule} className="add-module">
+          <button onClick={addCertificatesModule} className="button default add-module">
             Agregar certificados
           </button>
         </div>

@@ -106,7 +106,7 @@ function Languages() {
         </>
       ) : (
         <div className="wrapper-add-module">
-          <button onClick={addLanguagesModule} className="add-module">
+          <button onClick={addLanguagesModule} className="button default add-module">
             Agregar idiomas
           </button>
         </div>

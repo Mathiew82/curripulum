@@ -54,6 +54,31 @@ body.spacing-x2 .editable {
   padding: 1rem 3rem 4rem 3rem;
 }
 
+.button {
+  border: 2px solid;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0.4rem 1rem;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.default {
+  background-color: var(--default-button-color);
+  border-color: var(--default-button-border-color);
+  color: #000;
+}
+
+.default:hover {
+  background-color: var(--default-button-color-hover);
+  border-color: var(--default-button-border-color-hover);
+}
+
 ul {
   list-style: none inside;
   margin: 0;
@@ -127,28 +152,12 @@ h3 {
 }
 
 .add-module {
-  background-color: #ebedf3;
-  border: 2px solid #8c8e93;
-  border-radius: 8px;
-  cursor: pointer;
   font-size: 18px;
-  font-weight: bold;
   margin: 2rem auto 0 auto;
   padding: 0.5rem 1rem;
 }
 
-.add-module:hover {
-  background-color: #e0e2e8;
-  border-color: #707278;
-}
-
 .edit-button {
-  background-color: #ebedf3;
-  border: 2px solid #8c8e93;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
   padding: 0.4rem 0.8rem;
   position: absolute;
   top: 0.8rem;
@@ -157,11 +166,6 @@ h3 {
 
 .edit-button > svg {
   margin-right: 0.2rem;
-}
-
-.edit-button:hover {
-  background-color: #e0e2e8;
-  border-color: #707278;
 }
 
 .edit-item-button,
