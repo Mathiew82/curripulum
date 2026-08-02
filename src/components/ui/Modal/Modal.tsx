@@ -4,7 +4,7 @@ import "./Modal.css";
 interface Props {
   children: React.ReactNode;
   active: boolean;
-  title: string;
+  title?: string;
 }
 
 function Modal({ children, active, title }: Props) {

@@ -2,7 +2,7 @@ import "./AtsOptimization.css";
 
 function AtsOptimization() {
   return (
-    <button className="ats-optimization-button">
+    <button className="aside-button ats-optimization-button">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"

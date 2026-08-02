@@ -1,21 +1,7 @@
 .generate-pdf-button {
   background-color: var(--pdf-button-color);
-  border: 2px solid var(--pdf-button-border-color);
-  border-radius: 12px;
+  border-color: var(--pdf-button-border-color);
   color: var(--pdf-button-border-color);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 0.7rem 0.9rem;
-  width: 100%;
-  transition: padding 0.1s;
-}
-
-.generate-pdf-button > svg {
-  margin-right: 0.5rem;
 }
 
 .generate-pdf-button:hover {
@@ -117,10 +103,4 @@
 .generate-pdf-close:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-}
-
-@media print {
-  .generate-pdf-button {
-    display: none;
-  }
 }

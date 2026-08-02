@@ -50,7 +50,10 @@ function GeneratePDF() {
 
   return (
     <>
-      <button onClick={handleGenerate} className="generate-pdf-button">
+      <button
+        onClick={handleGenerate}
+        className="aside-button generate-pdf-button"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -72,7 +75,7 @@ function GeneratePDF() {
         </svg>
         Generar PDF
       </button>
-      <Modal title="Generar PDF" active={showModal}>
+      <Modal active={showModal}>
         <div className="generate-pdf-content">
           {isGenerating && (
             <div className="generate-pdf-loading">

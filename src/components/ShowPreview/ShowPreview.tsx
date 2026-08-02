@@ -67,7 +67,7 @@ function ShowPreview() {
 
   return (
     <>
-      <button onClick={onTogglePreview} className="show-preview-button">
+      <button onClick={onTogglePreview} className="aside-button show-preview-button">
         {iconButton}
         {textButton}
       </button>

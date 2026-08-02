@@ -2,7 +2,7 @@ import "./LinkedinImport.css";
 
 function LinkedinImport() {
   return (
-    <button className="linkedin-import-button">
+    <button className="aside-button linkedin-import-button">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
