@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Modal from "../../ui/Modal/Modal.tsx";
-import { ExperienceType } from "../Experience.tsx";
-import { generateId } from "../../../utils/generateId.ts";
+import Modal from "../../ui/Modal/Modal";
+import { ExperienceType } from "../Experience";
+import { generateId } from "../../../utils/generateId";
 import "./CreateExperience.css";
 
 interface Props {

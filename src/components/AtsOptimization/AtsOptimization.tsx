@@ -1,3 +1,5 @@
+"use client";
+
 import "./AtsOptimization.css";
 
 function AtsOptimization() {

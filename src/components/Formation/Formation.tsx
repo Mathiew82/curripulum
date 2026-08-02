@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import CreateFormation from "./CreateFormation/CreateFormation.tsx";
+import CreateFormation from "./CreateFormation/CreateFormation";
 import { cvStore } from "../../store/cvStore";
 
 export type FormationType = {

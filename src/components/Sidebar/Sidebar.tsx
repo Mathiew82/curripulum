@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import Settings from "../Settings/Settings";
 import ShowPreview from "../ShowPreview/ShowPreview";

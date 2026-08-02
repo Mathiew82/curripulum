@@ -1,7 +1,7 @@
+"use client";
+
 import { useRef, useState } from "react";
-import { pdf } from "@react-pdf/renderer";
 import Modal from "../ui/Modal/Modal";
-import CvPdfDocument from "../CvPdf/CvPdfDocument";
 import "./GeneratePDF.css";
 
 function GeneratePDF() {
@@ -18,6 +18,8 @@ function GeneratePDF() {
     setError(null);
 
     try {
+      const { pdf } = await import("@react-pdf/renderer");
+      const { default: CvPdfDocument } = await import("../CvPdf/CvPdfDocument");
       const blob = await pdf(<CvPdfDocument />).toBlob();
       pdfBlobRef.current = blob;
       setIsReady(true);

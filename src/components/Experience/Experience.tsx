@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import CreateExperience from "./CreateExperience/CreateExperience.tsx";
+import CreateExperience from "./CreateExperience/CreateExperience";
 import { cvStore } from "../../store/cvStore";
 
 export type ExperienceType = {

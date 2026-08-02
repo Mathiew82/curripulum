@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import CreateCertificate from "./CreateCertificate/CreateCertificate.tsx";
+import CreateCertificate from "./CreateCertificate/CreateCertificate";
 import "./Certificate.css";
 import { cvStore } from "../../store/cvStore";
 

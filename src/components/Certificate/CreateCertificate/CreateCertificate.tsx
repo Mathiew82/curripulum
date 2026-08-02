@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Modal from "../../ui/Modal/Modal.tsx";
-import { CertificateType } from "../Certificate.tsx";
-import { generateId } from "../../../utils/generateId.ts";
+import Modal from "../../ui/Modal/Modal";
+import { CertificateType } from "../Certificate";
+import { generateId } from "../../../utils/generateId";
 import "./CreateCertificate.css";
 
 interface Props {

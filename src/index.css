@@ -38,10 +38,6 @@ body.spacing-x2 .editable {
   margin-top: 2.5rem;
 }
 
-#root {
-  width: 100%;
-}
-
 .app-layout {
   display: flex;
   align-items: stretch;

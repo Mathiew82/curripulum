@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Modal from "../../ui/Modal/Modal.tsx";
-import { FormationType } from "../Formation.tsx";
-import { generateId } from "../../../utils/generateId.ts";
+import Modal from "../../ui/Modal/Modal";
+import { FormationType } from "../Formation";
+import { generateId } from "../../../utils/generateId";
 import "./CreateFormation.css";
 
 interface Props {
