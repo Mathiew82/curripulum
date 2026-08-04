@@ -34,12 +34,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #555;
+  color: var(--neutral-color-600);
 }
 
 .sidebar-toggle:hover {
-  background-color: #e0e1e5;
-  border-color: #7c7e83;
+  background-color: var(--neutral-color-100);
 }
 
 .sidebar-content {
