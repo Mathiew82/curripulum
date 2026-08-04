@@ -23,7 +23,7 @@
 
 .settings button {
   width: 28px;
-  background-color: #dbdde3;
+  background-color: var(--neutral-color-200);
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -41,8 +41,7 @@
 }
 
 .settings button:hover {
-  background-color: #cbcdd3;
-  border-color: #707278;
+  background-color: var(--neutral-color-300);
 }
 
 @media print {

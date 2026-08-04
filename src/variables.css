@@ -28,4 +28,15 @@
   --default-button-color-hover: #e0e2e8;
   --default-button-border-color: #8c8e93;
   --default-button-border-color-hover: #707278;
+
+  --neutral-color-50: #f7f7f7;
+  --neutral-color-100: #eeeeee;
+  --neutral-color-200: #dcdcdc;
+  --neutral-color-300: #cacaca;
+  --neutral-color-400: #b8b8b8;
+  --neutral-color-500: #a6a6a6;
+  --neutral-color-600: #949494;
+  --neutral-color-700: #828282;
+  --neutral-color-800: #707070;
+  --neutral-color-900: #5e5e5e;
 }
