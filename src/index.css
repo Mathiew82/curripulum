@@ -321,10 +321,17 @@ body.preview .editable {
 }
 
 body.preview .tag-list > li {
-  background-color: transparent;
+  background-color: var(--neutral-color-100);
   border: none;
-  margin-right: 3rem;
-  padding: 0;
+  margin: 0.4rem 0.4rem 0 0;
+  padding: 0 1rem;
+}
+
+@media print {
+  body.preview .tag-list > li {
+    margin: 0.4rem 1rem 0 0;
+    padding: 0;
+  }
 }
 
 body.preview .edit-button,
