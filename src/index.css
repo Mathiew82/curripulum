@@ -128,7 +128,9 @@ h3 {
 
 .editable-item:hover .remove-item-button,
 .editable-item:hover .edit-item-button {
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .editable-item > .line-1 {
@@ -137,7 +139,7 @@ h3 {
 }
 
 .editable-item > .line-2 {
-  color: #555;
+  color: var(--neutral-color-900);
   margin-bottom: 0.8rem;
 }
 
@@ -166,9 +168,12 @@ h3 {
 
 .edit-item-button,
 .remove-item-button {
-  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  background-color: var(--neutral-color-200);
   border: none;
-  color: #888;
+  border-radius: 6px;
+  color: var(--neutral-color-900);
   cursor: pointer;
   display: none;
   padding: 0;
@@ -176,8 +181,14 @@ h3 {
   top: 0.5rem;
 }
 
+.edit-item-button > svg,
+.remove-item-button > svg {
+  width: 16px;
+  height: 16px;
+}
+
 .edit-item-button {
-  right: 2rem;
+  right: 35px;
 }
 
 .remove-item-button {
@@ -186,7 +197,7 @@ h3 {
 
 .edit-item-button:hover,
 .remove-item-button:hover {
-  color: black;
+  background-color: var(--neutral-color-300);
 }
 
 .remove-module-button {
