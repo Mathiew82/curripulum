@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import Modal from "../ui/Modal/Modal";
+import Loading from "../ui/Loading/Loading";
 import "./GeneratePDF.css";
 
 function GeneratePDF() {
@@ -80,10 +81,7 @@ function GeneratePDF() {
       <Modal active={showModal}>
         <div className="generate-pdf-content">
           {isGenerating && (
-            <div className="generate-pdf-loading">
-              <div className="spinner" />
-              <p>Generando PDF...</p>
-            </div>
+            <Loading text="Generando PDF..." />
           )}
           {error && <p className="generate-pdf-error">{error}</p>}
           {isReady && (

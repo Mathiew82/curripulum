@@ -23,6 +23,8 @@ interface CvData {
   sectionOrder: SectionOrder[];
 }
 
+export type { CvData };
+
 const data: CvData = {
   name: "",
   photo: null,
