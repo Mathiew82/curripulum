@@ -4,6 +4,25 @@
   gap: 1rem;
   max-height: 70vh;
   overflow-y: auto;
+  margin-right: -1.75rem;
+  padding-right: 1.75rem;
+}
+
+.ats-config-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ats-config-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ats-config-content::-webkit-scrollbar-thumb {
+  background: var(--neutral-color-300);
+  border-radius: 3px;
+}
+
+.ats-config-content::-webkit-scrollbar-thumb:hover {
+  background: var(--neutral-color-500);
 }
 
 .ats-job-label {
@@ -17,6 +36,7 @@
   border-radius: 8px;
   font-family: inherit;
   font-size: 14px;
+  min-height: 160px;
   resize: vertical;
 }
 
@@ -26,9 +46,29 @@
 }
 
 .ats-process-button {
-  align-self: center;
+  border: 1px solid;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   font-size: 16px;
-  padding: 0.6rem 1.5rem;
+  font-weight: bold;
+  padding: 0.7rem 0.9rem;
+  transition: padding 0.1s;
+  background-color: var(--ai-button-color);
+  border-color: var(--ai-button-border-color);
+  color: var(--ai-button-border-color);
+  align-self: center;
+}
+
+.ats-process-button > svg {
+  margin-right: 0.5rem;
+}
+
+.ats-process-button:hover {
+  background-color: var(--ai-button-color-hover);
+  border-color: var(--ai-button-border-color-hover);
 }
 
 .ats-result,
