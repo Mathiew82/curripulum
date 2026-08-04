@@ -31,14 +31,14 @@
 }
 
 .skills > li.add {
-  background-color: #e2f1ed;
-  border: 1px solid #7b8a86;
+  background-color: var(--default-button-color);
+  border: 1px solid var(--default-button-border-color);
   cursor: pointer;
   font-weight: bold;
   padding: 0 1rem;
 }
 
 .skills > li.add:hover {
-  background-color: #d2e1dd;
-  border-color: #5b6a66;
+  background-color: var(--default-button-color-hover);
+  border-color: var(--default-button-border-color-hover);
 }
