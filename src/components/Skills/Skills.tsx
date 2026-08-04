@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import "./Skills.css";
 import { cvStore } from "../../store/cvStore";
 
 function Skills() {
@@ -62,7 +61,7 @@ function Skills() {
         <>
           <div className="editable">
             <h2>Habilidades</h2>
-            <ul className="skills">
+            <ul className="tag-list">
               {skills.map((skill) => (
                 <li key={skill}>
                   {skill}

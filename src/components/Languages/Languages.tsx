@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import "./Languages.css";
 import { cvStore } from "../../store/cvStore";
 
 function Languages() {
@@ -66,7 +65,7 @@ function Languages() {
         <>
           <div className="editable">
             <h2>Idiomas</h2>
-            <ul className="languages">
+            <ul className="tag-list">
               {languages.map((language) => (
                 <li key={language}>
                   {language}
