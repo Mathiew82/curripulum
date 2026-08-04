@@ -201,14 +201,13 @@ h3 {
 }
 
 .edit-button {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
   padding: 0.4rem 0.8rem;
   position: absolute;
   top: 0.8rem;
   right: 0.8rem;
-}
-
-.edit-button > svg {
-  margin-right: 0.2rem;
 }
 
 .edit-item-button,
@@ -248,8 +247,8 @@ h3 {
 .remove-module-button {
   width: 30px;
   height: 30px;
-  background-color: var(--neutral-color-200);
-  border: 2px solid var(--neutral-color-600);
+  background-color: var(--neutral-color-100);
+  border: 2px dashed var(--neutral-color-600);
   border-radius: 100%;
   cursor: pointer;
   font-size: 14px;
@@ -278,7 +277,8 @@ h3 {
 }
 
 .remove-module-button:hover {
-  background-color: var(--neutral-color-100);
+  background-color: var(--neutral-color-200);
+  border-color: var(--neutral-color-900);
 }
 
 .remove-tag-button {
