@@ -48,6 +48,18 @@ function Skills() {
   };
 
   useEffect(() => {
+    const unsub = cvStore.subscribe(() => {
+      const data = cvStore.getData();
+      setSkills((prev) => {
+        if (JSON.stringify(prev) === JSON.stringify(data.skills)) return prev;
+        return [...data.skills];
+      });
+      setActivate((prev) => (prev === data.skillsActive ? prev : data.skillsActive));
+    });
+    return unsub;
+  }, []);
+
+  useEffect(() => {
     cvStore.setSkills(skills);
   }, [skills]);
 

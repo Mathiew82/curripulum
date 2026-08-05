@@ -95,24 +95,26 @@ function AIConfigForm({ active, closeModal }: { active: boolean; closeModal: () 
         const parsed: AtsResponse = JSON.parse(cleanJson(res.content));
 
         if (parsed.aboutMe || parsed.experience || parsed.skills) {
-          if (parsed.aboutMe) {
-            const currentAboutMe = cvStore.getData().aboutMe;
-            const aboutMeId = currentAboutMe?.id || crypto.randomUUID();
-            cvStore.setAboutMe({ id: aboutMeId, text: parsed.aboutMe });
-            cvStore.setAboutMeActive(true);
-          }
+          cvStore.batch(() => {
+            if (parsed.aboutMe) {
+              const currentAboutMe = cvStore.getData().aboutMe;
+              const aboutMeId = currentAboutMe?.id || crypto.randomUUID();
+              cvStore.setAboutMe({ id: aboutMeId, text: parsed.aboutMe });
+              cvStore.setAboutMeActive(true);
+            }
 
-          if (parsed.experience && parsed.experience.length > 0) {
-            const updatedExperiences = cvStore.getData().experiences.map((exp, i) => ({
-              ...exp,
-              description: parsed.experience![i] || exp.description,
-            }));
-            cvStore.setExperiences(updatedExperiences);
-          }
+            if (parsed.experience && parsed.experience.length > 0) {
+              const updatedExperiences = cvStore.getData().experiences.map((exp, i) => ({
+                ...exp,
+                description: parsed.experience![i] || exp.description,
+              }));
+              cvStore.setExperiences(updatedExperiences);
+            }
 
-          if (parsed.skills && parsed.skills.length > 0) {
-            cvStore.setSkills(parsed.skills);
-          }
+            if (parsed.skills && parsed.skills.length > 0) {
+              cvStore.setSkills(parsed.skills);
+            }
+          });
 
           setSuccessMsg("CV actualizado correctamente");
         } else {

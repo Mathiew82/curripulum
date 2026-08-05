@@ -72,6 +72,23 @@ function Experience() {
   };
 
   useEffect(() => {
+    const unsub = cvStore.subscribe(() => {
+      const data = cvStore.getData();
+      setExperiences((prev) => {
+        if (
+          prev.length === data.experiences.length &&
+          prev.every((e, i) => e.description === data.experiences[i]?.description)
+        ) {
+          return prev;
+        }
+        return data.experiences.map((e) => ({ ...e }));
+      });
+      setActivate((prev) => (prev === data.experiencesActive ? prev : data.experiencesActive));
+    });
+    return unsub;
+  }, []);
+
+  useEffect(() => {
     cvStore.setExperiences(experiences);
   }, [experiences]);
 

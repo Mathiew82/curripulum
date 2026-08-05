@@ -18,6 +18,21 @@ function AboutMe() {
   const [draftText, setDraftText] = useState(aboutMe.text);
 
   useEffect(() => {
+    const unsub = cvStore.subscribe(() => {
+      const data = cvStore.getData();
+      if (data.aboutMe) {
+        setAboutMe((prev) => {
+          if (prev.id === data.aboutMe!.id && prev.text === data.aboutMe!.text) return prev;
+          return { id: data.aboutMe!.id, text: data.aboutMe!.text };
+        });
+        setDraftText((prev) => (prev === data.aboutMe!.text ? prev : data.aboutMe!.text));
+      }
+      setActivate((prev) => (prev === data.aboutMeActive ? prev : data.aboutMeActive));
+    });
+    return unsub;
+  }, []);
+
+  useEffect(() => {
     cvStore.setAboutMeActive(activate);
   }, [activate]);
 
