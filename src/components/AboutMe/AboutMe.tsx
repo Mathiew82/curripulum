@@ -13,7 +13,7 @@ function AboutMe() {
   const [editing, setEditing] = useState(false);
   const [aboutMe, setAboutMe] = useState<AboutMeType>({
     id: "v10aE1ftEmDkCOGMmHSAVD1VesYXnD1T",
-    text: "Aquí una breve descripción sobre ti, tus intereses profesionales y objetivos de carrera.",
+    text: "Soy desarrollador frontend especializado en Vue.js, GraphQL, y TypeScript.",
   });
   const [draftText, setDraftText] = useState(aboutMe.text);
 

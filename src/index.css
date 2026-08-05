@@ -89,16 +89,21 @@ ul {
 }
 
 .tag-list > li {
-  height: 40px;
+  height: 36px;
   background-color: var(--neutral-color-200);
   border: 1px solid var(--neutral-color-600);
   border-radius: 10px;
   display: flex;
   align-items: center;
-  margin: 0.4rem 1rem 0.4rem 0;
-  padding: 0 2.5rem 0 1rem;
+  margin: 0.4rem 0.5rem 0.4rem 0;
+  padding: 0 2rem 0 0.7rem;
   position: relative;
   transition: all 0.1s;
+}
+
+.tag-list > li > svg {
+  width: 18px;
+  height: 18px;
 }
 
 .tag-list > li.input {
@@ -109,7 +114,7 @@ ul {
 .tag-list > li.input > input {
   border: 1px solid var(--neutral-color-600);
   border-radius: 10px;
-  height: 40px;
+  height: 36px;
   padding: 0 1rem;
 }
 
@@ -131,23 +136,24 @@ h2,
 h3 {
   width: 100%;
   display: block;
+  font-weight: bold !important;
   margin: 0;
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 28px !important;
   padding: 1rem 0;
 }
 
 h2 {
-  font-size: 20px;
-  padding: 0 0 0.2rem 0;
+  font-size: 20px !important;
+  padding: 0 0 0.2rem 0 !important;
 }
 
 h3 {
-  color: #2f5e52;
-  font-size: 18px;
-  padding: 0.5rem 0;
+  color: #2f5e52 !important;
+  font-size: 18px !important;
+  padding: 0.5rem 0 !important;
 }
 
 .editable {
@@ -224,12 +230,13 @@ h3 {
 
 .edit-button {
   display: inline-flex;
+  font-size: 0.8rem;
   justify-content: flex-start;
   align-items: center;
   padding: 0.4rem 0.8rem;
   position: absolute;
-  top: 0.8rem;
-  right: 0.8rem;
+  top: 1rem;
+  right: 1rem;
 }
 
 .edit-item-button,
