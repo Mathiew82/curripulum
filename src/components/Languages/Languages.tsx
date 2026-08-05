@@ -95,7 +95,7 @@ function Languages() {
                 />
               </li>
               <li onClick={onAddLanguage} className="add">
-                añadir
+                agregar
               </li>
             </ul>
             <button

@@ -105,7 +105,7 @@ function Skills() {
                 />
               </li>
               <li onClick={onAddSkill} className="add">
-                añadir
+                agregar
               </li>
             </ul>
             <button
