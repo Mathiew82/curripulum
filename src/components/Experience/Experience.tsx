@@ -19,11 +19,41 @@ function Experience() {
   const [experiences, setExperiences] = useState<ExperienceType[]>([
     {
       id: "v10aE1ftEmDkCOGMmHSAVD1VesYXnD1T",
-      company: "Empresa",
-      position: "Posición",
-      duration: "jun. 2021 - actualidad",
+      company: "Promofarma",
+      position: "Frontend Engineer",
+      duration: "06/2021 - Present",
       description:
-        "Aquí la descripción de las tareas y responsabilidades de este puesto de trabajo.",
+        "CSS, SASS, JavaScript, Typescript, Vue.js, Pinia, GraphQL, Jest, GIT.",
+    },
+    {
+      id: "a10aE1ftEmDkCOGMmHSAVD1VesYXnD1T",
+      company: "Housfy",
+      position: "Front-end Developer",
+      duration: "12/2020 - 04/2020",
+      description:
+        "CSS, SASS, JavaScript, Typescript, Vue.js, Vuex, Nuxt.js, Jest, GIT.",
+    },
+    {
+      id: "b10aE1ftEmDkCOGMmHSAVD1VesYXnD1T",
+      company: "CREALOGIX",
+      position: "Front-end Developer",
+      duration: "07/2020 - 12/2020",
+      description: "CSS, SASS, JavaScript, Angular, GIT.",
+    },
+    {
+      id: "c10aE1ftEmDkCOGMmHSAVD1VesYXnD1T",
+      company: "Oh! my brand",
+      position: "Front-end Developer",
+      duration: "10/2018 - 07/2020",
+      description:
+        "CSS, SASS, JavaScript, Typescript, Vue.js, Vuex, Vue StoreFront, GIT.",
+    },
+    {
+      id: "d10aE1ftEmDkCOGMmHSAVD1VesYXnD1T",
+      company: "Pasiona",
+      position: "JavaScript Developer",
+      duration: "11/2017 - 06/2018",
+      description: "JavaScript, Phaser, Karma, Scrum, GIT.",
     },
   ]);
 
@@ -77,13 +107,17 @@ function Experience() {
       setExperiences((prev) => {
         if (
           prev.length === data.experiences.length &&
-          prev.every((e, i) => e.description === data.experiences[i]?.description)
+          prev.every(
+            (e, i) => e.description === data.experiences[i]?.description,
+          )
         ) {
           return prev;
         }
         return data.experiences.map((e) => ({ ...e }));
       });
-      setActivate((prev) => (prev === data.experiencesActive ? prev : data.experiencesActive));
+      setActivate((prev) =>
+        prev === data.experiencesActive ? prev : data.experiencesActive,
+      );
     });
     return unsub;
   }, []);

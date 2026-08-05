@@ -7,9 +7,9 @@ function Skills() {
   const [activate, setActivate] = useState<boolean>(true);
   const [newSkill, setNewSkill] = useState<string>("");
   const [skills, setSkills] = useState<string[]>([
-    "Comunicativo",
-    "Responsable",
-    "Organizado",
+    "CSS",
+    "JavaScript",
+    "Vue.js",
   ]);
 
   const onRemoveSkill = (skillToRemove: string): void => {
@@ -54,7 +54,9 @@ function Skills() {
         if (JSON.stringify(prev) === JSON.stringify(data.skills)) return prev;
         return [...data.skills];
       });
-      setActivate((prev) => (prev === data.skillsActive ? prev : data.skillsActive));
+      setActivate((prev) =>
+        prev === data.skillsActive ? prev : data.skillsActive,
+      );
     });
     return unsub;
   }, []);
