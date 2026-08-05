@@ -122,6 +122,7 @@ ul {
   background-color: var(--default-button-color);
   border: 1px solid var(--default-button-border-color);
   cursor: pointer;
+  font-size: 14px;
   font-weight: bold;
   padding: 0 1rem;
 }
