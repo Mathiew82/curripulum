@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { AIConfigForm as LibAIConfigForm, useAIConfig } from "@tombcato/ai-selector-react";
+import { useRef, useState } from "react";
+import { AIConfigForm as LibAIConfigForm, type AIConfig } from "@tombcato/ai-selector-react";
 import {
   getProvider,
   getStaticModels,
@@ -28,15 +28,22 @@ function AIConfigForm({ active, closeModal }: { active: boolean; closeModal: () 
   const [jobDescription, setJobDescription] = useState("");
   const [result, setResult] = useState<string>("");
   const [errorMsg, setErrorMsg] = useState("");
+  const configRef = useRef<AIConfig | null>(null);
 
-  const aiConfig = useAIConfig({ modelFetcher: staticModelFetcher });
+  const handleChange = (cfg: Partial<AIConfig>) => {
+    configRef.current = {
+      ...(configRef.current as AIConfig),
+      ...cfg,
+    } as AIConfig;
+  };
 
-  const handleSave = () => {
-    aiConfig.save();
+  const handleSave = (cfg: AIConfig) => {
+    configRef.current = cfg;
   };
 
   const handleProcess = async () => {
-    if (!aiConfig.isValid) {
+    const cfg = configRef.current;
+    if (!cfg || !cfg.providerId || !cfg.apiKey || !cfg.model) {
       setErrorMsg("Completa la configuración del modelo de IA antes de continuar.");
       setStatus("error");
       return;
@@ -55,15 +62,15 @@ function AIConfigForm({ active, closeModal }: { active: boolean; closeModal: () 
       const cvText = buildCvText(cvData);
       const prompt = buildATSOptimizationPrompt(cvText, jobDescription.trim());
 
-      const provider = getProvider(aiConfig.providerId);
+      const provider = getProvider(cfg.providerId);
       const apiFormat = provider?.apiFormat ?? "openai";
-      const baseUrl = aiConfig.baseUrl || provider?.baseUrl || "";
+      const baseUrl = cfg.baseUrl || provider?.baseUrl || "";
 
       const res = await sendDirectChat({
         apiFormat,
         baseUrl,
-        apiKey: aiConfig.apiKey,
-        model: aiConfig.model,
+        apiKey: cfg.apiKey,
+        model: cfg.model,
         messages: [{ role: "user", content: prompt }],
       });
 
@@ -115,6 +122,7 @@ function AIConfigForm({ active, closeModal }: { active: boolean; closeModal: () 
               showPreview={false}
               saveButtonText="Guardar configuración"
               modelFetcher={staticModelFetcher}
+              onChange={handleChange}
               onSave={handleSave}
             />
             <label className="ats-job-label" htmlFor="ats-job-description">
