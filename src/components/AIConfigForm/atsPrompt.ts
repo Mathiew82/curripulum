@@ -8,6 +8,13 @@ export function buildCvText(data: CvData): string {
       case "Name":
         if (data.name) lines.push(data.name, "");
         break;
+      case "AboutMe":
+        if (data.aboutMeActive && data.aboutMe && data.aboutMe.text.trim()) {
+          lines.push("SOBRE MÍ");
+          lines.push(data.aboutMe.text);
+          lines.push("");
+        }
+        break;
       case "Experience":
         if (data.experiencesActive && data.experiences.length > 0) {
           lines.push("EXPERIENCIA");

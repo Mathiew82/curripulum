@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { ReactSortable } from "react-sortablejs";
 import Name from "../../src/components/Name/Name";
+import AboutMe from "../../src/components/AboutMe/AboutMe";
 import Skills from "../../src/components/Skills/Skills";
 import Experience from "../../src/components/Experience/Experience";
 import Formation from "../../src/components/Formation/Formation";
@@ -19,11 +20,12 @@ interface ItemType {
 export default function Dashboard() {
   const [state, setState] = useState<ItemType[]>([
     { id: 0, name: "Name" },
-    { id: 1, name: "Experience" },
-    { id: 2, name: "Formation" },
-    { id: 3, name: "Certificate" },
-    { id: 4, name: "Skills" },
-    { id: 5, name: "Languages" },
+    { id: 1, name: "AboutMe" },
+    { id: 2, name: "Experience" },
+    { id: 3, name: "Formation" },
+    { id: 4, name: "Certificate" },
+    { id: 5, name: "Skills" },
+    { id: 6, name: "Languages" },
   ]);
 
   useEffect(() => {
@@ -32,6 +34,7 @@ export default function Dashboard() {
 
   const componentMapping = [
     Name,
+    AboutMe,
     Experience,
     Formation,
     Certificate,

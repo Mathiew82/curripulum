@@ -102,6 +102,21 @@ function NameSection() {
   return <Text style={styles.nameOnly}>{name}</Text>;
 }
 
+function AboutMeSection() {
+  const { aboutMe, aboutMeActive } = cvStore.getData();
+
+  if (!aboutMeActive || !aboutMe || !aboutMe.text.trim()) return null;
+
+  return (
+    <View>
+      <Text style={styles.h2}>Sobre mí</Text>
+      <Text style={{ fontSize: 11, lineHeight: 1.5, marginTop: 8 }}>
+        {aboutMe.text}
+      </Text>
+    </View>
+  );
+}
+
 function ExperienceSection() {
   const { experiences, experiencesActive } = cvStore.getData();
 
@@ -201,6 +216,7 @@ function LanguagesSection() {
 
 const sectionComponents: Record<string, React.FC> = {
   Name: NameSection,
+  AboutMe: AboutMeSection,
   Experience: ExperienceSection,
   Formation: FormationSection,
   Certificate: CertificateSection,

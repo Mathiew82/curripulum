@@ -1,6 +1,7 @@
 import type { ExperienceType } from "../components/Experience/Experience";
 import type { FormationType } from "../components/Formation/Formation";
 import type { CertificateType } from "../components/Certificate/Certificate";
+import type { AboutMeType } from "../components/AboutMe/AboutMe";
 
 export interface SectionOrder {
   id: number;
@@ -10,6 +11,8 @@ export interface SectionOrder {
 interface CvData {
   name: string;
   photo: string | null;
+  aboutMeActive: boolean;
+  aboutMe: AboutMeType | null;
   experiencesActive: boolean;
   experiences: ExperienceType[];
   formationsActive: boolean;
@@ -28,6 +31,8 @@ export type { CvData };
 const data: CvData = {
   name: "",
   photo: null,
+  aboutMeActive: false,
+  aboutMe: null,
   experiencesActive: false,
   experiences: [],
   formationsActive: false,
@@ -47,6 +52,12 @@ export const cvStore = {
   },
   setPhoto(v: string | null) {
     data.photo = v;
+  },
+  setAboutMeActive(v: boolean) {
+    data.aboutMeActive = v;
+  },
+  setAboutMe(v: AboutMeType) {
+    data.aboutMe = v;
   },
   setExperiencesActive(v: boolean) {
     data.experiencesActive = v;
