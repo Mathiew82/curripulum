@@ -22,12 +22,17 @@ function AboutMe() {
       const data = cvStore.getData();
       if (data.aboutMe) {
         setAboutMe((prev) => {
-          if (prev.id === data.aboutMe!.id && prev.text === data.aboutMe!.text) return prev;
+          if (prev.id === data.aboutMe!.id && prev.text === data.aboutMe!.text)
+            return prev;
           return { id: data.aboutMe!.id, text: data.aboutMe!.text };
         });
-        setDraftText((prev) => (prev === data.aboutMe!.text ? prev : data.aboutMe!.text));
+        setDraftText((prev) =>
+          prev === data.aboutMe!.text ? prev : data.aboutMe!.text,
+        );
       }
-      setActivate((prev) => (prev === data.aboutMeActive ? prev : data.aboutMeActive));
+      setActivate((prev) =>
+        prev === data.aboutMeActive ? prev : data.aboutMeActive,
+      );
     });
     return unsub;
   }, []);
@@ -105,18 +110,6 @@ function AboutMe() {
         </>
       ) : (
         <button onClick={onToggleEdit} className="button default edit-button">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="14"
-            height="14"
-            viewBox="0 0 24 16"
-            stroke="currentColor"
-            fill="none"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
-            <path d="M13.5 6.5l4 4" />
-          </svg>
           editar
         </button>
       )}
