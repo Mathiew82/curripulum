@@ -16,6 +16,21 @@ import "./AIConfigForm.css";
 
 type Status = "form" | "processing" | "done" | "error";
 
+interface AtsResponse {
+  aboutMe?: string;
+  experience?: string[];
+  skills?: string[];
+  recommendations?: string;
+}
+
+function cleanJson(raw: string): string {
+  let cleaned = raw.trim();
+  if (cleaned.startsWith("```")) {
+    cleaned = cleaned.replace(/^```(?:json)?\s*/, "").replace(/\s*```$/, "");
+  }
+  return cleaned.trim();
+}
+
 const staticModelFetcher = async (params: FetcherParams) => {
   if (params.type === "fetchModels") {
     return getStaticModels(params.providerId);
@@ -26,7 +41,8 @@ const staticModelFetcher = async (params: FetcherParams) => {
 function AIConfigForm({ active, closeModal }: { active: boolean; closeModal: () => void }) {
   const [status, setStatus] = useState<Status>("form");
   const [jobDescription, setJobDescription] = useState("");
-  const [result, setResult] = useState<string>("");
+  const [recommendations, setRecommendations] = useState("");
+  const [successMsg, setSuccessMsg] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
   const configRef = useRef<AIConfig | null>(null);
 
@@ -60,7 +76,8 @@ function AIConfigForm({ active, closeModal }: { active: boolean; closeModal: () 
     try {
       const cvData = cvStore.getData();
       const cvText = buildCvText(cvData);
-      const prompt = buildATSOptimizationPrompt(cvText, jobDescription.trim());
+      const experienceCount = cvData.experiences.length;
+      const prompt = buildATSOptimizationPrompt(cvText, jobDescription.trim(), experienceCount);
 
       const provider = getProvider(cfg.providerId);
       const apiFormat = provider?.apiFormat ?? "openai";
@@ -75,40 +92,60 @@ function AIConfigForm({ active, closeModal }: { active: boolean; closeModal: () 
       });
 
       if (res.success && res.content) {
-        setResult(res.content);
+        const parsed: AtsResponse = JSON.parse(cleanJson(res.content));
+
+        if (parsed.aboutMe || parsed.experience || parsed.skills) {
+          if (parsed.aboutMe) {
+            const currentAboutMe = cvStore.getData().aboutMe;
+            const aboutMeId = currentAboutMe?.id || crypto.randomUUID();
+            cvStore.setAboutMe({ id: aboutMeId, text: parsed.aboutMe });
+            cvStore.setAboutMeActive(true);
+          }
+
+          if (parsed.experience && parsed.experience.length > 0) {
+            const updatedExperiences = cvStore.getData().experiences.map((exp, i) => ({
+              ...exp,
+              description: parsed.experience![i] || exp.description,
+            }));
+            cvStore.setExperiences(updatedExperiences);
+          }
+
+          if (parsed.skills && parsed.skills.length > 0) {
+            cvStore.setSkills(parsed.skills);
+          }
+
+          setSuccessMsg("CV actualizado correctamente");
+        } else {
+          setSuccessMsg("La IA no devolvió contenido para actualizar. Inténtalo de nuevo.");
+        }
+
+        setRecommendations(parsed.recommendations || "");
         setStatus("done");
       } else {
         setErrorMsg(res.message || "Error al procesar la optimización.");
         setStatus("error");
       }
     } catch (e) {
-      setErrorMsg(e instanceof Error ? e.message : "Error inesperado.");
+      if (e instanceof SyntaxError) {
+        setErrorMsg("La respuesta de la IA no tiene un formato JSON válido. Inténtalo de nuevo.");
+      } else {
+        setErrorMsg(e instanceof Error ? e.message : "Error inesperado.");
+      }
       setStatus("error");
     }
   };
 
-  const handleDownload = () => {
-    const blob = new Blob([result], { type: "text/plain;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = "cv-optimizado-ats.txt";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-    handleClose();
-  };
-
   const handleClose = () => {
     setStatus("form");
-    setResult("");
+    setRecommendations("");
+    setSuccessMsg("");
     setErrorMsg("");
     closeModal();
   };
 
   const handleBack = () => {
     setStatus("form");
+    setSuccessMsg("");
     setErrorMsg("");
   };
 
@@ -167,10 +204,18 @@ function AIConfigForm({ active, closeModal }: { active: boolean; closeModal: () 
 
         {status === "done" && (
           <div className="ats-result">
-            <p>El currículum optimizado se ha generado correctamente.</p>
-            <button className="button default ats-download-button" onClick={handleDownload}>
-              Descargar CV optimizado
-            </button>
+            <p className="ats-success-msg">{successMsg}</p>
+            {recommendations && (
+              <>
+                <h3 className="ats-recommendations-title">Recomendaciones para mejorar tu CV</h3>
+                <textarea
+                  className="ats-recommendations-textarea"
+                  value={recommendations}
+                  readOnly
+                  rows={8}
+                />
+              </>
+            )}
             <button className="button default ats-back-button" onClick={handleBack}>
               Volver
             </button>

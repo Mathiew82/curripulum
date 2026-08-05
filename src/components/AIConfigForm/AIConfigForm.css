@@ -85,9 +85,34 @@
   margin: 0;
 }
 
-.ats-download-button {
-  font-size: 16px;
-  padding: 0.6rem 1.5rem;
+.ats-success-msg {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.ats-recommendations-title {
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+.ats-recommendations-textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--neutral-color-600);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  min-height: 140px;
+  resize: vertical;
+  background-color: var(--neutral-color-50);
+  color: var(--neutral-color-900);
+}
+
+.ats-recommendations-textarea:focus {
+  outline: none;
+  border-color: var(--neutral-color-900);
 }
 
 .ats-back-button,

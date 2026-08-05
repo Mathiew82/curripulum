@@ -70,6 +70,7 @@ export function buildCvText(data: CvData): string {
 export function buildATSOptimizationPrompt(
   cvText: string,
   jobDescription: string,
+  experienceCount: number,
 ): string {
   return `Eres un experto en reclutamiento y optimización de currículums para ATS (Applicant Tracking Systems).
 Tu objetivo es mejorar el CV del usuario para que supere los filtros automáticos de los sistemas ATS.
@@ -77,9 +78,8 @@ Tu objetivo es mejorar el CV del usuario para que supere los filtros automático
 ## INSTRUCCIONES:
 1. Analiza la oferta de trabajo y extrae las palabras clave principales (habilidades, tecnologías, soft skills, certificaciones)
 2. Revisa el currículum actual y sugiere mejoras para incluir esas palabras clave de forma natural
-3. Mantén el formato en texto plano (sin tablas, columnas o gráficos)
-4. No inventes experiencia que el usuario no tenga, pero reformula la existente para que coincida con los requisitos
-5. Usa el formato de secciones estándar ATS: Resumen, Experiencia Laboral, Habilidades, Educación
+3. No inventes experiencia que el usuario no tenga, pero reformula la existente para que coincida con los requisitos
+4. Usa un lenguaje profesional y directo, con logros cuantificables cuando sea posible
 
 ## OFERTA DE TRABAJO:
 ${jobDescription}
@@ -88,12 +88,21 @@ ${jobDescription}
 ${cvText}
 
 ## RESULTADO ESPERADO:
-Devuelve el currículum optimizado con las siguientes secciones:
-1. Resumen profesional (2-3 líneas con palabras clave)
-2. Experiencia laboral (con logros cuantificables y palabras clave)
-3. Habilidades (lista en texto plano separada por comas)
-4. Educación (formato simplificado)
+Devuelve ÚNICAMENTE un objeto JSON válido con esta estructura:
+{
+  "aboutMe": "texto optimizado para la sección Sobre Mí (2-3 líneas)",
+  "experience": ["descripción optimizada experiencia 1", "descripción optimizada experiencia 2", ...],
+  "skills": ["habilidad1", "habilidad2", "habilidad3", ...],
+  "recommendations": "3-4 consejos específicos para mejorar aún más el CV"
+}
 
-Además, al final, incluye una sección "RECOMENDACIONES" con 3-4 consejos específicos para mejorar aún más el CV.
+IMPORTANTE:
+- El array "experience" debe tener exactamente ${experienceCount} elemento(s), en el mismo orden que las experiencias del usuario.
+- "aboutMe" debe ser un texto de 2-3 líneas con palabras clave relevantes.
+- "skills" debe ser un array de strings con las habilidades clave para esta oferta.
+- "recommendations" debe ser un texto con 3-4 consejos prácticos.
+- Si no hay contenido para un campo, usa cadena vacía "" o array vacío [].
+- No incluyas texto adicional ni marcadores de formato (nada de \`\`\`json).
+- Devuelve solo el JSON.
 `;
 }
