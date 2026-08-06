@@ -36,8 +36,9 @@
   border-radius: 8px;
   font-family: inherit;
   font-size: 14px;
-  min-height: 160px;
+  min-height: 120px;
   resize: vertical;
+  overflow: hidden;
 }
 
 .ats-job-textarea:focus {
@@ -52,9 +53,9 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
-  padding: 0.7rem 0.9rem;
+  padding: 0.6rem 1rem;
   transition: padding 0.1s;
   background-color: var(--ai-button-color);
   border-color: var(--ai-button-border-color);
@@ -64,7 +65,7 @@
 }
 
 .ats-process-button > svg {
-  margin-right: 0.5rem;
+  margin-right: 0.3rem;
 }
 
 .ats-process-button:hover {
