@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../src/index.css";
 import "../src/variables.css";
+import "../src/fonts.css";
 
 export const metadata: Metadata = {
   title: "Curripulum - Crea tu currículum fácilmente",
