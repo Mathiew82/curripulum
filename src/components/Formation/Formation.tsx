@@ -134,7 +134,7 @@ function Formation() {
               onClick={() => onCreateFormation()}
               className="button default edit-button"
             >
-              agregar
+              añadir
             </button>
             <button
               onClick={onRemoveFormationModule}

@@ -137,7 +137,7 @@ function Certificate() {
               onClick={() => onCreateCertificate()}
               className="button default edit-button"
             >
-              agregar
+              añadir
             </button>
             <button
               onClick={onRemoveCertificateModule}

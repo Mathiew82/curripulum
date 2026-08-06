@@ -185,7 +185,7 @@ function Experience() {
               onClick={() => onCreateExperience()}
               className="button default edit-button"
             >
-              agregar
+              añadir
             </button>
             <button
               onClick={onRemoveExperienceModule}
