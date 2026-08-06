@@ -7,15 +7,19 @@ interface Props {
   children: React.ReactNode;
   active: boolean;
   title?: string;
+  headerRight?: React.ReactNode;
 }
 
-function Modal({ children, active, title }: Props) {
+function Modal({ children, active, title, headerRight }: Props) {
   return (
     <>
       {active && (
         <div className="wrapper-modal">
           <div className="modal">
-            <h2>{title}</h2>
+            <div className="modal-header">
+              <h2>{title}</h2>
+              {headerRight}
+            </div>
             {children}
           </div>
         </div>
