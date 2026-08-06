@@ -25,6 +25,11 @@
   background: var(--neutral-color-500);
 }
 
+.apmsu-card {
+  border: 1px solid var(--neutral-color-600) !important;
+  margin-bottom: 1rem;
+}
+
 .ats-job-label {
   font-weight: bold;
 }
@@ -33,7 +38,7 @@
   width: 100%;
   padding: 0.6rem 0.8rem;
   border: 1px solid var(--neutral-color-600);
-  border-radius: 8px;
+  border-radius: 0.75rem;
   font-family: inherit;
   font-size: 14px;
   min-height: 120px;
@@ -48,14 +53,14 @@
 
 .ats-process-button {
   border: 1px solid;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   font-size: 14px;
   font-weight: bold;
-  padding: 0.6rem 1rem;
+  padding: 0.4rem 0.8rem;
   transition: padding 0.1s;
   background-color: var(--ai-button-color);
   border-color: var(--ai-button-border-color);

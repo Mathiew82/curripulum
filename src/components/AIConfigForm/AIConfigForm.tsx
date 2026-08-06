@@ -207,6 +207,7 @@ function AIConfigForm({
       <div className="ats-config-content">
         {status === "form" && (
           <>
+            <div className="ats-job-label">Selecciona tu modelo de IA:</div>
             <LibAIConfigForm
               language="en"
               showPreview={false}
@@ -216,7 +217,7 @@ function AIConfigForm({
               onSave={handleSave}
             />
             <label className="ats-job-label" htmlFor="ats-job-description">
-              Oferta de trabajo:
+              Agrega la oferta de trabajo a la que quieres postularte:
             </label>
             <textarea
               id="ats-job-description"
