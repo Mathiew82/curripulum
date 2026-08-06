@@ -1,7 +1,10 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { AIConfigForm as LibAIConfigForm, type AIConfig } from "@tombcato/ai-selector-react";
+import {
+  AIConfigForm as LibAIConfigForm,
+  type AIConfig,
+} from "@tombcato/ai-selector-react";
 import {
   getProvider,
   getStaticModels,
@@ -38,7 +41,13 @@ const staticModelFetcher = async (params: FetcherParams) => {
   return { success: true, latency: 0, message: "OK" };
 };
 
-function AIConfigForm({ active, closeModal }: { active: boolean; closeModal: () => void }) {
+function AIConfigForm({
+  active,
+  closeModal,
+}: {
+  active: boolean;
+  closeModal: () => void;
+}) {
   const [status, setStatus] = useState<Status>("form");
   const [jobDescription, setJobDescription] = useState("");
   const [recommendations, setRecommendations] = useState("");
@@ -60,7 +69,9 @@ function AIConfigForm({ active, closeModal }: { active: boolean; closeModal: () 
   const handleProcess = async () => {
     const cfg = configRef.current;
     if (!cfg || !cfg.providerId || !cfg.apiKey || !cfg.model) {
-      setErrorMsg("Completa la configuración del modelo de IA antes de continuar.");
+      setErrorMsg(
+        "Completa la configuración del modelo de IA antes de continuar.",
+      );
       setStatus("error");
       return;
     }
@@ -77,7 +88,11 @@ function AIConfigForm({ active, closeModal }: { active: boolean; closeModal: () 
       const cvData = cvStore.getData();
       const cvText = buildCvText(cvData);
       const experienceCount = cvData.experiences.length;
-      const prompt = buildATSOptimizationPrompt(cvText, jobDescription.trim(), experienceCount);
+      const prompt = buildATSOptimizationPrompt(
+        cvText,
+        jobDescription.trim(),
+        experienceCount,
+      );
 
       const provider = getProvider(cfg.providerId);
       const apiFormat = provider?.apiFormat ?? "openai";
@@ -104,10 +119,12 @@ function AIConfigForm({ active, closeModal }: { active: boolean; closeModal: () 
             }
 
             if (parsed.experience && parsed.experience.length > 0) {
-              const updatedExperiences = cvStore.getData().experiences.map((exp, i) => ({
-                ...exp,
-                description: parsed.experience![i] || exp.description,
-              }));
+              const updatedExperiences = cvStore
+                .getData()
+                .experiences.map((exp, i) => ({
+                  ...exp,
+                  description: parsed.experience![i] || exp.description,
+                }));
               cvStore.setExperiences(updatedExperiences);
             }
 
@@ -118,7 +135,9 @@ function AIConfigForm({ active, closeModal }: { active: boolean; closeModal: () 
 
           setSuccessMsg("CV actualizado correctamente");
         } else {
-          setSuccessMsg("La IA no devolvió contenido para actualizar. Inténtalo de nuevo.");
+          setSuccessMsg(
+            "La IA no devolvió contenido para actualizar. Inténtalo de nuevo.",
+          );
         }
 
         setRecommendations(parsed.recommendations || "");
@@ -129,7 +148,9 @@ function AIConfigForm({ active, closeModal }: { active: boolean; closeModal: () 
       }
     } catch (e) {
       if (e instanceof SyntaxError) {
-        setErrorMsg("La respuesta de la IA no tiene un formato JSON válido. Inténtalo de nuevo.");
+        setErrorMsg(
+          "La respuesta de la IA no tiene un formato JSON válido. Inténtalo de nuevo.",
+        );
       } else {
         setErrorMsg(e instanceof Error ? e.message : "Error inesperado.");
       }
@@ -153,6 +174,11 @@ function AIConfigForm({ active, closeModal }: { active: boolean; closeModal: () 
 
   return (
     <Modal title="Optimizar para ATS" active={active}>
+      <button
+        className="close-modal-button"
+        onClick={handleClose}
+        disabled={status === "processing"}
+      />
       <div className="ats-config-content">
         {status === "form" && (
           <>
@@ -202,14 +228,18 @@ function AIConfigForm({ active, closeModal }: { active: boolean; closeModal: () 
           </>
         )}
 
-        {status === "processing" && <Loading text="Optimizando currículum..." />}
+        {status === "processing" && (
+          <Loading text="Optimizando currículum..." />
+        )}
 
         {status === "done" && (
           <div className="ats-result">
             <p className="ats-success-msg">{successMsg}</p>
             {recommendations && (
               <>
-                <h3 className="ats-recommendations-title">Recomendaciones para mejorar tu CV</h3>
+                <h3 className="ats-recommendations-title">
+                  Recomendaciones para mejorar tu CV
+                </h3>
                 <textarea
                   className="ats-recommendations-textarea"
                   value={recommendations}
@@ -218,7 +248,10 @@ function AIConfigForm({ active, closeModal }: { active: boolean; closeModal: () 
                 />
               </>
             )}
-            <button className="button default ats-back-button" onClick={handleBack}>
+            <button
+              className="button default ats-back-button"
+              onClick={handleBack}
+            >
               Volver
             </button>
           </div>
@@ -232,14 +265,6 @@ function AIConfigForm({ active, closeModal }: { active: boolean; closeModal: () 
             </button>
           </div>
         )}
-
-        <button
-          className="button default ats-close-button"
-          onClick={handleClose}
-          disabled={status === "processing"}
-        >
-          Cerrar
-        </button>
       </div>
     </Modal>
   );

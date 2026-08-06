@@ -79,10 +79,13 @@ function GeneratePDF() {
         Generar PDF
       </button>
       <Modal active={showModal}>
+        <button
+          className="close-modal-button"
+          onClick={handleClose}
+          disabled={isGenerating}
+        />
         <div className="generate-pdf-content">
-          {isGenerating && (
-            <Loading text="Generando PDF..." />
-          )}
+          {isGenerating && <Loading text="Generando PDF..." />}
           {error && <p className="generate-pdf-error">{error}</p>}
           {isReady && (
             <>
@@ -110,14 +113,6 @@ function GeneratePDF() {
               Reintentar
             </button>
           )}
-          <button
-            className="button default"
-            onClick={handleClose}
-            disabled={isGenerating}
-            style={{ marginTop: "0.5rem" }}
-          >
-            Cerrar
-          </button>
         </div>
       </Modal>
     </>

@@ -11,7 +11,7 @@
 .modal {
   width: 60%;
   height: auto;
-  background-color: white;
+  background-color: var(--neutral-color-50);
   border-radius: 8px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   padding: 2rem;
@@ -22,5 +22,41 @@
 }
 
 .modal > h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.close-modal-button {
+  width: 30px;
+  height: 30px;
+  background-color: var(--neutral-color-50);
+  border-radius: 100%;
+  cursor: pointer;
+  font-size: 14px;
+  position: absolute;
+  top: 0.3rem;
+  right: 0.3rem;
+}
+
+.close-modal-button:after,
+.close-modal-button:before {
+  width: 2px;
+  height: 12px;
+  background-color: black;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.close-modal-button:after {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-modal-button:before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.close-modal-button:hover {
+  background-color: var(--neutral-color-200);
+  border-color: var(--neutral-color-900);
 }

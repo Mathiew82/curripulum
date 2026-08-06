@@ -17,7 +17,7 @@
 
 .create-certificate input,
 .create-certificate textarea {
-  border: 2px solid #c0c2c8;
+  border: 1px solid #c0c2c8;
   border-radius: 8px;
   flex: 1;
 }
@@ -48,7 +48,7 @@
 
 .create-certificate button.cancel {
   background-color: #f0f2f8;
-  border: 2px solid #c0c2c8;
+  border: 1px solid #c0c2c8;
 }
 
 .create-certificate button.cancel:hover {
@@ -58,7 +58,7 @@
 
 .create-certificate button.save {
   background-color: #ebfaf6;
-  border: 2px solid #abbab6;
+  border: 1px solid #abbab6;
 }
 
 .create-certificate button.save:hover {
