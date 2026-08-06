@@ -59,6 +59,8 @@
   background-color: var(--ai-button-color);
   border-color: var(--ai-button-border-color);
   color: var(--ai-button-border-color);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .ats-process-button > svg {

@@ -33,15 +33,15 @@
 }
 
 .close-modal-button {
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   background-color: var(--neutral-color-50);
-  border-radius: 100%;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 14px;
   position: absolute;
-  top: 0.3rem;
-  right: 0.3rem;
+  top: 0.2rem;
+  right: 0.2rem;
 }
 
 .close-modal-button:after,
