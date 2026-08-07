@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@react-pdf/renderer": "^4.5.1",
+    "@supabase/ssr": "^0.12.4",
+    "@supabase/supabase-js": "^2.112.2",
     "@tombcato/ai-selector-core": "^0.1.11",
     "@tombcato/ai-selector-react": "^0.1.11",
     "next": "^14.2.35",
