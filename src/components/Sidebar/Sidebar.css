@@ -80,13 +80,15 @@
   transition:
     margin-right 0.1s,
     transform 0.1s,
+    stroke-width 0.1s,
     opacity 0.8s;
 }
 
 .aside-button:hover > svg {
-  margin-right: 0.6rem;
+  margin-right: 0.7rem;
   transform: scale(1.2);
   opacity: 0.2;
+  stroke-width: 1.5;
 }
 
 @media print {
