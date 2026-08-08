@@ -15,6 +15,7 @@ import Languages from "../../src/components/Languages/Languages";
 import Sidebar from "../../src/components/Sidebar/Sidebar";
 import Navbar from "../../src/components/Navbar/Navbar";
 import { cvStore } from "../../src/store/cvStore";
+import Loading from "../../src/components/ui/Loading/Loading";
 
 interface ItemType {
   id: number;
@@ -55,7 +56,11 @@ export default function Dashboard() {
   }, [router, supabase]);
 
   if (loading) {
-    return <div>Cargando...</div>;
+    return (
+      <div className="loading-wrapper">
+        <Loading />
+      </div>
+    );
   }
 
   const componentMapping = [
