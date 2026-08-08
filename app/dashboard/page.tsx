@@ -13,6 +13,7 @@ import Formation from "../../src/components/Formation/Formation";
 import Certificate from "../../src/components/Certificate/Certificate";
 import Languages from "../../src/components/Languages/Languages";
 import Sidebar from "../../src/components/Sidebar/Sidebar";
+import Navbar from "../../src/components/Navbar/Navbar";
 import { cvStore } from "../../src/store/cvStore";
 
 interface ItemType {
@@ -53,11 +54,6 @@ export default function Dashboard() {
     checkUser();
   }, [router, supabase]);
 
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
-    router.push("/auth/login");
-  };
-
   if (loading) {
     return <div>Cargando...</div>;
   }
@@ -73,27 +69,24 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="app-layout">
-      <main className="main-content">
-        {user && (
-          <div className="user-info">
-            <p>Bienvenido, {user.email}</p>
-            <button onClick={handleLogout}>Cerrar sesión</button>
-          </div>
-        )}
-        <ReactSortable
-          list={state}
-          setList={setState}
-          animation={200}
-          ghostClass="blue-background-class"
-        >
-          {state.map((item: ItemType) => {
-            const Component = componentMapping[item.id];
-            return <Component key={item.id} />;
-          })}
-        </ReactSortable>
-      </main>
-      <Sidebar />
-    </div>
+    <>
+      {user && <Navbar user={user} />}
+      <div className="app-layout">
+        <main className="main-content">
+          <ReactSortable
+            list={state}
+            setList={setState}
+            animation={200}
+            ghostClass="blue-background-class"
+          >
+            {state.map((item: ItemType) => {
+              const Component = componentMapping[item.id];
+              return <Component key={item.id} />;
+            })}
+          </ReactSortable>
+        </main>
+        <Sidebar />
+      </div>
+    </>
   );
 }
