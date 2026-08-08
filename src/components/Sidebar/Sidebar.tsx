@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Settings from "../Settings/Settings";
 import ShowPreview from "../ShowPreview/ShowPreview";
 import GeneratePDF from "../GeneratePDF/GeneratePDF";
 import AtsOptimization from "../AtsOptimization/AtsOptimization";
@@ -36,7 +35,6 @@ function Sidebar() {
         className={`sidebar ${isOpen ? "sidebar-open" : "sidebar-closed"}`}
       >
         <div className="sidebar-content">
-          <Settings />
           <LinkedinImport />
           <ShowPreview />
           <AtsOptimization />

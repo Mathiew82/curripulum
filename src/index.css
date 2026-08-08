@@ -11,32 +11,6 @@ body {
   padding: 0;
 }
 
-/* Font Size Resize */
-body.font-size-d2 h3 {
-  font-size: 16px;
-}
-body.font-size-d2 .line-1,
-body.font-size-d2 .line-2,
-body.font-size-d2 .line-3 {
-  font-size: 14px;
-}
-body.font-size-x2 h3 {
-  font-size: 20px;
-}
-body.font-size-x2 .line-1,
-body.font-size-x2 .line-2,
-body.font-size-x2 .line-3 {
-  font-size: 18px;
-}
-
-/* Spacing Resize */
-body.spacing-d2 .editable {
-  margin-top: 1rem;
-}
-body.spacing-x2 .editable {
-  margin-top: 2.5rem;
-}
-
 .app-layout {
   width: 100%;
   min-height: 100vh;

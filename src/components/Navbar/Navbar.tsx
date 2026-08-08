@@ -51,7 +51,7 @@ export default function Navbar({ user }: NavbarProps) {
         {open && (
           <div className="navbar-menu">
             <button className="navbar-menu-item" onClick={() => setOpen(false)}>
-              Cuenta
+              Mi cuenta
             </button>
             <button className="navbar-menu-item" onClick={handleLogout}>
               Cerrar sesión
