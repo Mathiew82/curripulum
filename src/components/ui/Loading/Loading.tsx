@@ -6,11 +6,11 @@ interface LoadingProps {
   text?: string;
 }
 
-function Loading({ text = "Cargando..." }: LoadingProps) {
+function Loading({ text }: LoadingProps) {
   return (
     <div className="loading">
       <div className="spinner" />
-      <p>{text}</p>
+      {text && <p>{text}</p>}
     </div>
   );
 }
